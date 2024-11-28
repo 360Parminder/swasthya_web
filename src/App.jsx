@@ -1,13 +1,14 @@
 // import './App.css'
 import Loader from './Components/Loader'
+import HomeScreen from './Pages/HomeScreen'
 
 function App() {
 
   return (
     <>
-    <div className=' bg-white'>
-
-    <Loader />
+    <div>
+    <HomeScreen />
+    {/* <Loader /> */}
     </div>
     </>
   )

@@ -11,7 +11,7 @@ const Loader = () => {
             <motion.h1 
             initial={{ opacity: 0,z: 0 }}
             animate={{ opacity: 1,z: 100 }}
-            transition={{ duration: 8 }}
+            transition={{ duration: 4 }}
             
             className="text-4xl font-bold">Swasthya</motion.h1>
         </motion.div>
