@@ -8,7 +8,7 @@ const HomeScreen = () => {
         <div className="flex flex-col items-center w-screen h-screen">
             {/* <Header /> */}
             <div className=" flex flex-row w-full h-full justify-center">
-                <div>
+                <div className="">
                     <h3 className=" text-[3rem] font-bold w-6/12">The Future of Health Monitoring is Here.</h3>
                     <p className=" w-2/5">Track, manage, and improve your well-being—all in one powerful app.
                     Personalized insights and tools to help you achieve your health goals.
@@ -30,7 +30,7 @@ const HomeScreen = () => {
                             </button>
                     </div>
                 </div>
-                <div>
+                <div className=" relative">
                     <img className=" h-3/5" src={iPhone} alt="Home Screen" />
                 </div>
             </div>
