@@ -44,5 +44,5 @@ We welcome contributions! To contribute:
 This project is licensed under the MIT License.
 
 ## Contact
-For queries or support, reach out to us at [your-email@example.com](mailto:360.Parminder@gmail.com).
+For queries or support, reach out to us at [360.Parminder@gmail.com](mailto:360.Parminder@gmail.com).
 
