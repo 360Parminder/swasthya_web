@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { IonIcon } from '@ionic/react';
+import { logoApple, logoGooglePlaystore } from 'ionicons/icons';
 
 const Header = () => {
     const [scrolled, setScrolled] = useState(false);
@@ -20,19 +22,25 @@ const Header = () => {
     }, []);
 
     return (
-        <header className={`fixed transition-all duration-300 ${scrolled ? 'bg-gray-800 shadow-lg w-[90%] top-5 rounded-lg' : 'bg-transparent w-full'}`}>
+        <header className={`fixed transition-all duration-300 z-50 ${scrolled ? 'bg-gray-800 shadow-lg w-[90%] top-5 rounded-lg' : 'bg-transparent w-full'}`}>
             <div className="container mx-auto flex justify-between items-center py-4 px-6">
-                <div className="text-white text-2xl font-bold">Logo</div>
+                <div className={`text-2xl font-bold ${scrolled ? 'text-white' : 'text-white'}`}>Swasthya</div>
                 <nav>
-                    <ul className="flex space-x-6 text-white">
-                        <li><a href="#about" className="hover:text-gray-400">About</a></li>
-                        <li><a href="#how-to" className="hover:text-gray-400">How To</a></li>
-                        <li><a href="#features" className="hover:text-gray-400">Features</a></li>
-                        <li><a href="#download" className="hover:text-gray-400">Download</a></li>
-                        <li><a href="#contact" className="hover:text-gray-400">Contact Us</a></li>
+                    <ul className="flex space-x-8">
+                        <li><a href="#features" className={`hover:text-blue-400 transition-colors ${scrolled ? 'text-gray-300' : 'text-white'}`}>Features</a></li>
+                        <li><a href="#about" className={`hover:text-blue-400 transition-colors ${scrolled ? 'text-gray-300' : 'text-white'}`}>About</a></li>
+                        <li><a href="#contact" className={`hover:text-blue-400 transition-colors ${scrolled ? 'text-gray-300' : 'text-white'}`}>Contact</a></li>
                     </ul>
                 </nav>
-                        <a href="#demo" className="hover:text-gray-400">Get a Demo</a>
+                <div className="flex items-center gap-4">
+                    <div className="flex gap-2">
+                        <IonIcon icon={logoApple} className={`text-xl border-[1px] rounded-full p-2 ${scrolled ? 'text-gray-300 border-gray-600' : 'text-white border-white'} hover:bg-gray-700 cursor-pointer`} />
+                        <IonIcon icon={logoGooglePlaystore} className={`text-xl border-[1px] rounded-full p-2 ${scrolled ? 'text-gray-300 border-gray-600' : 'text-white border-white'} hover:bg-gray-700 cursor-pointer`} />
+                    </div>
+                    <button className={`px-4 py-2 rounded-full ${scrolled ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-white text-blue-600 hover:bg-gray-100'} transition-colors`}>
+                        Download App
+                    </button>
+                </div>
             </div>
         </header>
     );
