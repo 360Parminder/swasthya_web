@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { IonIcon } from '@ionic/react';
 import { logoApple, logoGooglePlaystore } from 'ionicons/icons';
 
@@ -24,12 +25,12 @@ const Header = () => {
     return (
         <header className={`fixed transition-all duration-300 z-50 ${scrolled ? 'bg-gray-800 shadow-lg w-[90%] top-5 rounded-lg' : 'bg-transparent w-full'}`}>
             <div className="container mx-auto flex justify-between items-center py-4 px-6">
-                <div className={`text-2xl font-bold ${scrolled ? 'text-white' : 'text-white'}`}>Swasthya</div>
+                <Link to="/" className={`text-2xl font-bold ${scrolled ? 'text-white' : 'text-white'}`}>Swasthya</Link>
                 <nav>
                     <ul className="flex space-x-8">
-                        <li><a href="#features" className={`hover:text-blue-400 transition-colors ${scrolled ? 'text-gray-300' : 'text-white'}`}>Features</a></li>
-                        <li><a href="#about" className={`hover:text-blue-400 transition-colors ${scrolled ? 'text-gray-300' : 'text-white'}`}>About</a></li>
-                        <li><a href="#contact" className={`hover:text-blue-400 transition-colors ${scrolled ? 'text-gray-300' : 'text-white'}`}>Contact</a></li>
+                        <li><Link to="/features" className={`hover:text-blue-400 transition-colors ${scrolled ? 'text-gray-300' : 'text-white'}`}>Features</Link></li>
+                        <li><Link to="/about" className={`hover:text-blue-400 transition-colors ${scrolled ? 'text-gray-300' : 'text-white'}`}>About</Link></li>
+                        <li><Link to="/contact" className={`hover:text-blue-400 transition-colors ${scrolled ? 'text-gray-300' : 'text-white'}`}>Contact</Link></li>
                     </ul>
                 </nav>
                 <div className="flex items-center gap-4">
