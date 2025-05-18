@@ -1,6 +1,7 @@
 import React from 'react';
 import { IonIcon } from '@ionic/react';
 import { fitness, nutrition, heart, time, analytics, notifications, trophy, settings } from 'ionicons/icons';
+import { motion } from 'framer-motion';
 
 const Features = () => {
     const features = [
@@ -72,51 +73,126 @@ const Features = () => {
         }
     ];
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.5
+            }
+        }
+    };
+
     return (
         <div className="min-h-screen bg-gray-900 pt-24 pb-16">
             <div className="max-w-7xl mx-auto px-4">
                 {/* Header Section */}
-                <div className="text-center mb-16">
+                <motion.div 
+                    initial={{ opacity: 0, y: -20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="text-center mb-16"
+                >
                     <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">App Features</h1>
                     <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                         Discover the comprehensive features designed to help you achieve your health and wellness goals.
                     </p>
-                </div>
+                </motion.div>
 
                 {/* Features Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <motion.div 
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                >
                     {features.map((feature, index) => (
-                        <div key={index} className="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-colors">
-                            <div className="flex items-center mb-4">
+                        <motion.div
+                            key={index}
+                            variants={itemVariants}
+                            whileHover={{ scale: 1.05 }}
+                            className="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-colors"
+                        >
+                            <motion.div 
+                                initial={{ scale: 0 }}
+                                whileInView={{ scale: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                className="flex items-center mb-4"
+                            >
                                 <IonIcon icon={feature.icon} className="text-4xl text-blue-400 mr-4" />
                                 <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
-                            </div>
+                            </motion.div>
                             <p className="text-gray-300 mb-4">{feature.description}</p>
-                            <ul className="space-y-2">
+                            <motion.ul 
+                                initial={{ opacity: 0 }}
+                                whileInView={{ opacity: 1 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
+                                className="space-y-2"
+                            >
                                 {feature.details.map((detail, idx) => (
-                                    <li key={idx} className="flex items-center text-gray-400">
-                                        <span className="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                                    <motion.li 
+                                        key={idx}
+                                        initial={{ x: -20, opacity: 0 }}
+                                        whileInView={{ x: 0, opacity: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ duration: 0.3, delay: idx * 0.1 }}
+                                        className="flex items-center text-gray-400"
+                                    >
+                                        <motion.span 
+                                            initial={{ scale: 0 }}
+                                            whileInView={{ scale: 1 }}
+                                            viewport={{ once: true }}
+                                            className="w-2 h-2 bg-blue-400 rounded-full mr-2"
+                                        />
                                         {detail}
-                                    </li>
+                                    </motion.li>
                                 ))}
-                            </ul>
-                        </div>
+                            </motion.ul>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
 
                 {/* Call to Action */}
-                <div className="mt-16 text-center">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="mt-16 text-center"
+                >
                     <h2 className="text-3xl font-bold text-white mb-4">Ready to Start Your Health Journey?</h2>
                     <p className="text-gray-300 mb-8">Download our app today and take the first step towards a healthier lifestyle.</p>
                     <div className="flex justify-center gap-4">
-                        <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors">
+                        <motion.button 
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors"
+                        >
                             Download Now
-                        </button>
-                        <button className="border-2 border-blue-400 text-blue-400 px-8 py-3 rounded-full hover:bg-gray-800 transition-colors">
+                        </motion.button>
+                        <motion.button 
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="border-2 border-blue-400 text-blue-400 px-8 py-3 rounded-full hover:bg-gray-800 transition-colors"
+                        >
                             Learn More
-                        </button>
+                        </motion.button>
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     );

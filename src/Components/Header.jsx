@@ -23,7 +23,7 @@ const Header = () => {
     }, []);
 
     return (
-        <header className={`fixed transition-all duration-300 z-50 ${scrolled ? 'bg-gray-800 shadow-lg w-[90%] top-5 rounded-lg' : 'bg-transparent w-full'}`}>
+        <header className={`fixed transition-all duration-300 z-50 ${scrolled ? 'bg-gray-800 shadow-lg w-[90%] top-5 rounded-lg ml-[5%]' : 'bg-transparent w-full'}`}>
             <div className="container mx-auto flex justify-between items-center py-4 px-6">
                 <Link to="/" className={`text-2xl font-bold ${scrolled ? 'text-white' : 'text-white'}`}>Swasthya</Link>
                 <nav>

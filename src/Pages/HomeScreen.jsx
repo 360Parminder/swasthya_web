@@ -2,7 +2,9 @@ import iPhone from "../assets/Images/iPhone.png";
 import AppStore from "../assets/Images/apple.png";
 import GoogleStore from "../assets/Images/googlePlay.png";
 import { IonIcon } from '@ionic/react';
-import { logoApple, logoGooglePlaystore, fitness, nutrition, heart } from 'ionicons/icons';
+import { logoApple, logoGooglePlaystore, fitness, nutrition, heart,bed } from 'ionicons/icons';
+import { motion } from 'framer-motion';
+import { Link } from "react-router-dom";
 
 const HomeScreen = () => {
     return (
@@ -10,49 +12,105 @@ const HomeScreen = () => {
             {/* Hero Section */}
             <div className="flex flex-col pt-32 px-10 bg-gradient-to-b from-gray-800 to-gray-900">
                 <div className="max-w-6xl mx-auto w-full">
-                    <h2 className="text-[4rem] font-[600] text-white">The Future of Health</h2>
-                    <h2 className="text-[4rem] italic text-blue-400">Monitoring is Here.</h2>
-                    <p className="text-[1.5rem] font-[500] text-gray-300 mt-4 max-w-2xl">
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                        className="text-[4rem] font-[600] text-white"
+                    >
+                        The Future of Health
+                    </motion.h2>
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="text-[4rem] italic text-blue-400"
+                    >
+                        Monitoring is Here.
+                    </motion.h2>
+                    <motion.p 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        className="text-[1.5rem] font-[500] text-gray-300 mt-4 max-w-2xl"
+                    >
                         Track, manage, and improve your well-being—all in one powerful app.
                         Personalized insights and tools to help you achieve your health goals.
-                    </p>
-                    <div className="flex flex-row mt-8 items-center gap-4">
-                        <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors">
+                    </motion.p>
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.6 }}
+                        className="flex flex-row mt-8 items-center gap-4"
+                    >
+                        <motion.button 
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                            className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors"
+                        >
                             Get Started
-                        </button>
+                        </motion.button>
                         <div className="flex flex-row gap-4">
-                            <IonIcon icon={logoApple} className="text-3xl border-[1px] border-gray-600 rounded-full p-2 text-gray-300 hover:bg-gray-800 cursor-pointer" />
-                            <IonIcon icon={logoGooglePlaystore} className="text-3xl border-[1px] border-gray-600 rounded-full p-2 text-gray-300 hover:bg-gray-800 cursor-pointer" />
+                            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                                <IonIcon icon={logoApple} className="text-3xl border-[1px] border-gray-600 rounded-full p-2 text-gray-300 hover:bg-gray-800 cursor-pointer" />
+                            </motion.div>
+                            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+                                <IonIcon icon={logoGooglePlaystore} className="text-3xl border-[1px] border-gray-600 rounded-full p-2 text-gray-300 hover:bg-gray-800 cursor-pointer" />
+                            </motion.div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
 
             {/* Features Section */}
             <div className="py-20 px-10 bg-gray-900">
                 <div className="max-w-6xl mx-auto">
-                    <h2 className="text-4xl font-bold text-center mb-16 text-white">Key Features</h2>
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                        className="text-4xl font-bold text-center mb-16 text-white"
+                    >
+                        Key Features
+                    </motion.h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div className="p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors">
-                            <IonIcon icon={fitness} className="text-4xl text-blue-400 mb-4" />
-                            <h3 className="text-xl font-semibold mb-2 text-white">Physical Activity</h3>
-                            <p className="text-gray-400">Track your workouts, steps, and daily activities with detailed analytics.</p>
-                        </div>
-                        <div className="p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors">
-                            <IonIcon icon={nutrition} className="text-4xl text-blue-400 mb-4" />
-                            <h3 className="text-xl font-semibold mb-2 text-white">Dietary Habits</h3>
-                            <p className="text-gray-400">Monitor your nutrition, meal plans, and water intake for better health.</p>
-                        </div>
-                        <div className="p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors">
-                            <IonIcon icon={heart} className="text-4xl text-blue-400 mb-4" />
-                            <h3 className="text-xl font-semibold mb-2 text-white">Sleep Patterns</h3>
-                            <p className="text-gray-400">Analyze your sleep quality and get personalized recommendations.</p>
-                        </div>
-                        <div className="p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors">
-                            <IonIcon icon={heart} className="text-4xl text-blue-400 mb-4" />
-                            <h3 className="text-xl font-semibold mb-2 text-white">Mental Health</h3>
-                            <p className="text-gray-400">Track your mood, stress levels, and practice mindfulness exercises.</p>
-                        </div>
+                        {[
+                            {
+                                icon: fitness,
+                                title: "Physical Activity",
+                                description: "Track your workouts, steps, and daily activities with detailed analytics."
+                            },
+                            {
+                                icon: nutrition,
+                                title: "Dietary Habits",
+                                description: "Monitor your nutrition, meal plans, and water intake for better health."
+                            },
+                            {
+                                icon: bed,
+                                title: "Sleep Patterns",
+                                description: "Analyze your sleep quality and get personalized recommendations."
+                            },
+                            {
+                                icon: heart,
+                                title: "Mental Health",
+                                description: "Track your mood, stress levels, and practice mindfulness exercises."
+                            }
+                        ].map((feature, index) => (
+                            <motion.div
+                                key={index}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                whileHover={{ scale: 1.05 }}
+                                className="p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors"
+                            >
+                                <IonIcon icon={feature.icon} className="text-4xl text-blue-400 mb-4" />
+                                <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
+                                <p className="text-gray-400">{feature.description}</p>
+                            </motion.div>
+                        ))}
                     </div>
                 </div>
             </div>
@@ -60,23 +118,55 @@ const HomeScreen = () => {
             {/* App Preview Section */}
             <div className="py-20 px-10 bg-gray-800">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
-                    <div className="flex-1">
+                    <motion.div 
+                        initial={{ opacity: 0, x: -50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                        className="flex-1"
+                    >
                         <h2 className="text-4xl font-bold mb-6 text-white">Your Personal Health Companion</h2>
                         <p className="text-lg text-gray-300 mb-8">
                             Set goals, track progress, and receive personalized reminders to stay on track with your health objectives. Our app makes it easy to maintain a healthy lifestyle.
                         </p>
                         <div className="flex flex-row gap-4">
-                            <button className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors">
+                            <motion.button 
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors"
+                            >
                                 Download Now
-                            </button>
-                            <button className="border-2 border-blue-400 text-blue-400 px-6 py-2 rounded-full hover:bg-gray-700 transition-colors">
+                            </motion.button>
+                            
+                            <motion.button
+                                // to="/features"
+                                as={Link}
+                                to="/features"
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }} 
+
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="border-2 border-blue-400 text-blue-400 px-6 py-2 rounded-full hover:bg-gray-700 transition-colors"
+                            >
                                 Learn More
-                            </button>
+                            </motion.button>
                         </div>
-                    </div>
-                    <div className="flex-1 flex justify-center">
-                        <img className="w-[300px] h-[500px] object-contain" src={iPhone} alt="App Preview" />
-                    </div>
+                    </motion.div>
+                    <motion.div 
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.5 }}
+                        className="flex-1 flex justify-center"
+                    >
+                        <motion.img 
+                            whileHover={{ scale: 1.05 }}
+                            className="w-[300px] h-[500px] object-contain" 
+                            src={iPhone} 
+                            alt="App Preview" 
+                        />
+                    </motion.div>
                 </div>
             </div>
         </div>
