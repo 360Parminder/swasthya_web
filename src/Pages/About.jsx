@@ -81,7 +81,7 @@ const About = () => {
                 </div>
 
                 {/* Team Section */}
-                <div className="mb-16">
+                {/* <div className="mb-16">
                     <h2 className="text-3xl font-bold text-white mb-8 text-center">Our Leadership Team</h2>
                     <div className="grid md:grid-cols-3 gap-8">
                         {team.map((member, index) => (
@@ -92,7 +92,7 @@ const About = () => {
                             </div>
                         ))}
                     </div>
-                </div>
+                </div> */}
 
                 {/* Call to Action */}
                 <div className="text-center">

@@ -123,25 +123,32 @@ const Features = () => {
                             key={index}
                             variants={itemVariants}
                             whileHover={{ scale: 1.05 }}
-                            className="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-colors"
+                            className="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-colors relative overflow-hidden group"
                         >
+                            {/* Pentagon Background */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                            
+                            {/* Pentagon Shape */}
+                            <div className="absolute -right-16 -top-16 w-32 h-32 bg-blue-500/20 rotate-45 transform group-hover:scale-150 transition-transform duration-300" />
+                            <div className="absolute -left-16 -bottom-16 w-32 h-32 bg-purple-500/20 rotate-45 transform group-hover:scale-150 transition-transform duration-300" />
+
                             <motion.div 
                                 initial={{ scale: 0 }}
                                 whileInView={{ scale: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="flex items-center mb-4"
+                                className="flex items-center mb-4 relative z-10"
                             >
                                 <IonIcon icon={feature.icon} className="text-4xl text-blue-400 mr-4" />
                                 <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
                             </motion.div>
-                            <p className="text-gray-300 mb-4">{feature.description}</p>
+                            <p className="text-gray-300 mb-4 relative z-10">{feature.description}</p>
                             <motion.ul 
                                 initial={{ opacity: 0 }}
                                 whileInView={{ opacity: 1 }}
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
-                                className="space-y-2"
+                                className="space-y-2 relative z-10"
                             >
                                 {feature.details.map((detail, idx) => (
                                     <motion.li 
@@ -198,4 +205,4 @@ const Features = () => {
     );
 };
 
-export default Features; 
+export default Features;

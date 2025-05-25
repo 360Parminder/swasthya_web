@@ -44,24 +44,24 @@ const Contact = () => {
                                     <IonIcon icon={mailOutline} className="text-2xl text-blue-400 mt-1" />
                                     <div>
                                         <h3 className="text-white font-semibold">Email</h3>
-                                        <p className="text-gray-300">support@swasthya.com</p>
-                                        <p className="text-gray-300">info@swasthya.com</p>
+                                        <p className="text-gray-300">360.parminder@gmail.com</p>
+                                        {/* <p className="text-gray-300">info@swasthya.com</p> */}
                                     </div>
                                 </div>
                                 <div className="flex items-start space-x-4">
                                     <IonIcon icon={callOutline} className="text-2xl text-blue-400 mt-1" />
                                     <div>
                                         <h3 className="text-white font-semibold">Phone</h3>
-                                        <p className="text-gray-300">+1 (555) 123-4567</p>
-                                        <p className="text-gray-300">+1 (555) 987-6543</p>
+                                        <p className="text-gray-300">+91 8779112732</p>
+                                        {/* <p className="text-gray-300">+1 (555) 987-6543</p> */}
                                     </div>
                                 </div>
                                 <div className="flex items-start space-x-4">
                                     <IonIcon icon={locationOutline} className="text-2xl text-blue-400 mt-1" />
                                     <div>
                                         <h3 className="text-white font-semibold">Address</h3>
-                                        <p className="text-gray-300">123 Health Street</p>
-                                        <p className="text-gray-300">Wellness City, WC 12345</p>
+                                        <p className="text-gray-300">Alwar, Rajasthan</p>
+                                        <p className="text-gray-300">India</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start space-x-4">
