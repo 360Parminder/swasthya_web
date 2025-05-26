@@ -1,6 +1,5 @@
-import iPhone from "../assets/Images/iPhone.png";
-import AppStore from "../assets/Images/apple.png";
-import GoogleStore from "../assets/Images/googlePlay.png";
+import Homescreen from "../assets/Images/HomeScreen.png";
+import Home_Profile from "../assets/Images/Home-Profile.png";
 import { IonIcon } from '@ionic/react';
 import { logoApple, logoGooglePlaystore, fitness, nutrition, heart,bed } from 'ionicons/icons';
 import { motion } from 'framer-motion';
@@ -10,55 +9,81 @@ const HomeScreen = () => {
     return (
         <div className="flex flex-col min-h-screen bg-gray-900">
             {/* Hero Section */}
-            <div className="flex flex-col pt-32 px-10 bg-gradient-to-b from-gray-800 to-gray-900">
-                <div className="max-w-6xl mx-auto w-full">
-                    <motion.h2 
+            <div className="flex flex-col md:flex-row pt-24 md:pt-32 px-4 md:px-10 bg-gradient-to-b from-gray-800 to-gray-900 min-h-screen">
+                <div className="flex flex-col justify-center w-full md:w-1/2 space-y-6">
+                    <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
-                        className="text-[4rem] font-[600] text-white"
+                        className="space-y-2"
                     >
-                        The Future of Health
-                    </motion.h2>
-                    <motion.h2 
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        className="text-[4rem] italic text-blue-400"
-                    >
-                        Monitoring is Here.
-                    </motion.h2>
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                            The Future of Health
+                        </h2>
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold italic text-blue-400 leading-tight">
+                            Monitoring is Here.
+                        </h2>
+                    </motion.div>
+                    
                     <motion.p 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                        className="text-[1.5rem] font-[500] text-gray-300 mt-4 max-w-2xl"
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        className="text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed"
                     >
                         Track, manage, and improve your well-being—all in one powerful app.
                         Personalized insights and tools to help you achieve your health goals.
                     </motion.p>
+
                     <motion.div 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.6 }}
-                        className="flex flex-row mt-8 items-center gap-4"
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        className="flex flex-col sm:flex-row gap-6 items-center"
                     >
                         <motion.button 
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors"
+                            className="bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition-colors text-lg font-semibold shadow-lg hover:shadow-blue-500/25"
                         >
                             Get Started
                         </motion.button>
-                        <div className="flex flex-row gap-4">
-                            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                                <IonIcon icon={logoApple} className="text-3xl border-[1px] border-gray-600 rounded-full p-2 text-gray-300 hover:bg-gray-800 cursor-pointer" />
+                        
+                        <div className="flex gap-4">
+                            <motion.div 
+                                whileHover={{ scale: 1.1 }} 
+                                whileTap={{ scale: 0.9 }}
+                                className="transform transition-all duration-300"
+                            >
+                                <IonIcon 
+                                    icon={logoApple} 
+                                    className="text-3xl border-2 border-gray-600 rounded-full p-3 text-gray-300 hover:bg-gray-800 hover:text-white cursor-pointer transition-colors" 
+                                />
                             </motion.div>
-                            <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-                                <IonIcon icon={logoGooglePlaystore} className="text-3xl border-[1px] border-gray-600 rounded-full p-2 text-gray-300 hover:bg-gray-800 cursor-pointer" />
+                            <motion.div 
+                                whileHover={{ scale: 1.1 }} 
+                                whileTap={{ scale: 0.9 }}
+                                className="transform transition-all duration-300"
+                            >
+                                <IonIcon 
+                                    icon={logoGooglePlaystore} 
+                                    className="text-3xl border-2 border-gray-600 rounded-full p-3 text-gray-300 hover:bg-gray-800 hover:text-white cursor-pointer transition-colors" 
+                                />
                             </motion.div>
                         </div>
                     </motion.div>
+                </div>
+
+                <div className="w-full md:w-1/2 mt-12 md:mt-0 flex justify-center items-center">
+                    <motion.img 
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5, delay: 0.6 }}
+                        whileHover={{ scale: 1.05 }}
+                        className="w-full max-w-[450px] h-auto object-contain drop-shadow-2xl" 
+                        src={Home_Profile} 
+                        alt="App Preview" 
+                    />
                 </div>
             </div>
 
@@ -162,8 +187,8 @@ const HomeScreen = () => {
                     >
                         <motion.img 
                             whileHover={{ scale: 1.05 }}
-                            className="w-[300px] h-[500px] object-contain" 
-                            src={iPhone} 
+                            className="w-[900px] h-[600px] object-contain" 
+                            src={Homescreen} 
                             alt="App Preview" 
                         />
                     </motion.div>
