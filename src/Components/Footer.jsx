@@ -1,11 +1,14 @@
 import React from 'react';
 import { IonIcon } from '@ionic/react';
-import { logoApple, logoGooglePlaystore, logoFacebook, logoTwitter, logoInstagram, mailOutline, callOutline, locationOutline } from 'ionicons/icons';
+import { logoApple, logoGooglePlaystore, logoFacebook, logoTwitter, logoInstagram, mailOutline, callOutline, locationOutline, moonOutline, sunnyOutline } from 'ionicons/icons';
 import { Link } from 'react-router-dom';
+import { useTheme } from '../Utils/ThemeContext';
 
 const Footer = () => {
+    const { isDarkMode, toggleTheme } = useTheme();
+
     return (
-        <footer className="bg-gray-900 text-gray-300">
+        <footer className="bg-gray-900 dark:bg-gray-800 text-gray-300 transition-colors duration-200">
             <div className="max-w-7xl mx-auto px-4 py-12">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {/* Company Info */}
@@ -73,7 +76,20 @@ const Footer = () => {
 
                 {/* Bottom Bar */}
                 <div className="border-t border-gray-800 mt-12 pt-8 text-sm text-center">
-                    <p>&copy; {new Date().getFullYear()} Swasthya. All rights reserved.</p>
+                    <div className="flex justify-center items-center space-x-4">
+                        <p>&copy; {new Date().getFullYear()} Swasthya. All rights reserved.</p>
+                        <button
+                            onClick={toggleTheme}
+                            className="p-2 rounded-full hover:bg-gray-700 transition-colors"
+                            aria-label="Toggle theme"
+                        >
+                            {isDarkMode ? (
+                                <IonIcon icon={sunnyOutline} className="text-xl text-yellow-400" />
+                            ) : (
+                                <IonIcon icon={moonOutline} className="text-xl text-gray-300" />
+                            )}
+                        </button>
+                    </div>
                 </div>
             </div>
         </footer>

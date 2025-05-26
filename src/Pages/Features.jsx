@@ -2,6 +2,7 @@ import React from 'react';
 import { IonIcon } from '@ionic/react';
 import { fitness, nutrition, heart, time, analytics, notifications, trophy, settings } from 'ionicons/icons';
 import { motion } from 'framer-motion';
+import { useTheme } from '../Utils/ThemeContext';
 
 const Features = () => {
     const features = [
@@ -93,6 +94,8 @@ const Features = () => {
             }
         }
     };
+
+    const { isDarkMode } = useTheme();
 
     return (
         <div className="min-h-screen bg-gray-900 pt-24 pb-16">
