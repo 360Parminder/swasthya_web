@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 
 const HomeScreen = () => {
     return (
-        <div className="flex flex-col min-h-screen bg-gray-900">
+        <div className="flex flex-col min-h-screen bg-black">
             {/* Hero Section */}
-            <div className="flex flex-col md:flex-row pt-24 md:pt-32 px-4 md:px-10 bg-gradient-to-b from-gray-800 to-gray-900 min-h-screen">
+            <div className="flex flex-col md:flex-row pt-24 md:pt-32 px-4 md:px-10 bg-gradient-to-b from-gray-900 to-black min-h-screen">
                 <div className="flex flex-col justify-center w-full md:w-1/2 space-y-6">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -20,7 +20,7 @@ const HomeScreen = () => {
                         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                             The Future of Health
                         </h2>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold italic text-blue-400 leading-tight">
+                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold italic text-blue-500 leading-tight">
                             Monitoring is Here.
                         </h2>
                     </motion.div>
@@ -29,7 +29,7 @@ const HomeScreen = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="text-lg md:text-xl text-gray-300 max-w-2xl leading-relaxed"
+                        className="text-lg md:text-xl text-gray-400 max-w-2xl leading-relaxed"
                     >
                         Track, manage, and improve your well-being—all in one powerful app.
                         Personalized insights and tools to help you achieve your health goals.
@@ -44,7 +44,7 @@ const HomeScreen = () => {
                         <motion.button 
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="bg-blue-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 transition-colors text-lg font-semibold shadow-lg hover:shadow-blue-500/25"
+                            className="bg-blue-500 text-white px-8 py-4 rounded-full hover:bg-blue-600 transition-colors text-lg font-semibold shadow-lg hover:shadow-blue-500/25"
                         >
                             Get Started
                         </motion.button>
@@ -57,7 +57,7 @@ const HomeScreen = () => {
                             >
                                 <IonIcon 
                                     icon={logoApple} 
-                                    className="text-3xl border-2 border-gray-600 rounded-full p-3 text-gray-300 hover:bg-gray-800 hover:text-white cursor-pointer transition-colors" 
+                                    className="text-3xl border-2 border-gray-700 rounded-full p-3 text-gray-400 hover:bg-gray-800 hover:text-white cursor-pointer transition-colors" 
                                 />
                             </motion.div>
                             <motion.div 
@@ -67,7 +67,7 @@ const HomeScreen = () => {
                             >
                                 <IonIcon 
                                     icon={logoGooglePlaystore} 
-                                    className="text-3xl border-2 border-gray-600 rounded-full p-3 text-gray-300 hover:bg-gray-800 hover:text-white cursor-pointer transition-colors" 
+                                    className="text-3xl border-2 border-gray-700 rounded-full p-3 text-gray-400 hover:bg-gray-800 hover:text-white cursor-pointer transition-colors" 
                                 />
                             </motion.div>
                         </div>
@@ -88,7 +88,7 @@ const HomeScreen = () => {
             </div>
 
             {/* Features Section */}
-            <div className="py-20 px-10 bg-gray-900">
+            <div className="py-20 px-10 bg-black">
                 <div className="max-w-6xl mx-auto">
                     <motion.h2 
                         initial={{ opacity: 0, y: 20 }}
@@ -129,9 +129,9 @@ const HomeScreen = () => {
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: index * 0.1 }}
                                 whileHover={{ scale: 1.05 }}
-                                className="p-6 rounded-xl bg-gray-800 hover:bg-gray-700 transition-colors"
+                                className="p-6 rounded-xl bg-gray-900 hover:bg-gray-800 transition-colors"
                             >
-                                <IonIcon icon={feature.icon} className="text-4xl text-blue-400 mb-4" />
+                                <IonIcon icon={feature.icon} className="text-4xl text-blue-500 mb-4" />
                                 <h3 className="text-xl font-semibold mb-2 text-white">{feature.title}</h3>
                                 <p className="text-gray-400">{feature.description}</p>
                             </motion.div>
@@ -141,7 +141,7 @@ const HomeScreen = () => {
             </div>
 
             {/* App Preview Section */}
-            <div className="py-20 px-10 bg-gray-800">
+            <div className="py-20 px-10 bg-gray-900">
                 <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
                     <motion.div 
                         initial={{ opacity: 0, x: -50 }}
@@ -151,28 +151,26 @@ const HomeScreen = () => {
                         className="flex-1"
                     >
                         <h2 className="text-4xl font-bold mb-6 text-white">Your Personal Health Companion</h2>
-                        <p className="text-lg text-gray-300 mb-8">
+                        <p className="text-lg text-gray-400 mb-8">
                             Set goals, track progress, and receive personalized reminders to stay on track with your health objectives. Our app makes it easy to maintain a healthy lifestyle.
                         </p>
                         <div className="flex flex-row gap-4">
                             <motion.button 
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition-colors"
+                                className="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors"
                             >
                                 Download Now
                             </motion.button>
                             
                             <motion.button
-                                // to="/features"
                                 as={Link}
                                 to="/features"
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }} 
-
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
-                                className="border-2 border-blue-400 text-blue-400 px-6 py-2 rounded-full hover:bg-gray-700 transition-colors"
+                                className="border-2 border-blue-500 text-blue-500 px-6 py-2 rounded-full hover:bg-gray-800 transition-colors"
                             >
                                 Learn More
                             </motion.button>
