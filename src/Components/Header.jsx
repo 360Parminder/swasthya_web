@@ -39,7 +39,7 @@ const Header = () => {
                         <IonIcon icon={logoGooglePlaystore} className={`text-xl border-[1px] rounded-full p-2 ${scrolled ? 'text-gray-300 border-gray-600' : 'text-white border-white'} hover:bg-gray-700 cursor-pointer`} />
                     </div>
                     <button className={`px-4 py-2 rounded-full ${scrolled ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-white text-blue-600 hover:bg-gray-100'} transition-colors`}>
-                        Download App
+                        Comming Soon
                     </button>
                 </div>
             </div>

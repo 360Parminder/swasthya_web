@@ -46,7 +46,7 @@ const HomeScreen = () => {
                             whileTap={{ scale: 0.95 }}
                             className="bg-blue-500 text-white px-8 py-4 rounded-full hover:bg-blue-600 transition-colors text-lg font-semibold shadow-lg hover:shadow-blue-500/25"
                         >
-                            Get Started
+                            Comming Soon
                         </motion.button>
                         
                         <div className="flex gap-4">
@@ -160,7 +160,7 @@ const HomeScreen = () => {
                                 whileTap={{ scale: 0.95 }}
                                 className="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors"
                             >
-                                Download Now
+                                Comming Soon
                             </motion.button>
                             
                             <motion.button

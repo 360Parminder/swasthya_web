@@ -192,7 +192,7 @@ const Features = () => {
                             whileTap={{ scale: 0.95 }}
                             className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors"
                         >
-                            Download Now
+                            Comming Soon
                         </motion.button>
                         <motion.button 
                             whileHover={{ scale: 1.05 }}
