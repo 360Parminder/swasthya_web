@@ -1,50 +1,92 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { IonIcon } from '@ionic/react';
-import { logoApple, logoGooglePlaystore } from 'ionicons/icons';
+import { Link, useLocation } from 'react-router-dom';
+import { AppLogo } from './AppLogo';
 
 const Header = () => {
-    const [scrolled, setScrolled] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setScrolled(true);
-            } else {
-                setScrolled(false);
-            }
-        };
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
 
-        window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+  return (
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-white/85 backdrop-blur-md border-b border-gray-100/80 shadow-sm py-3' 
+          : 'bg-transparent py-5'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 flex justify-between items-center">
+        {/* Left: Logo & Brand Name */}
+        <Link to="/" className="flex items-center space-x-2 group">
+          <AppLogo size="header" showText={true} />
+        </Link>
 
-    return (
-        <header className={`fixed transition-all duration-300 z-50 ${scrolled ? 'bg-gray-800 shadow-lg w-[90%] top-5 rounded-lg ml-[5%]' : 'bg-transparent w-full'}`}>
-            <div className="container mx-auto flex justify-between items-center py-4 px-6">
-                <Link to="/" className={`text-2xl font-bold ${scrolled ? 'text-white' : 'text-white'}`}>Swasthya</Link>
-                <nav>
-                    <ul className="flex space-x-8">
-                        <li><Link to="/features" className={`hover:text-blue-400 transition-colors ${scrolled ? 'text-gray-300' : 'text-white'}`}>Features</Link></li>
-                        <li><Link to="/about" className={`hover:text-blue-400 transition-colors ${scrolled ? 'text-gray-300' : 'text-white'}`}>About</Link></li>
-                        <li><Link to="/contact" className={`hover:text-blue-400 transition-colors ${scrolled ? 'text-gray-300' : 'text-white'}`}>Contact</Link></li>
-                    </ul>
-                </nav>
-                <div className="flex items-center gap-4">
-                    <div className="flex gap-2">
-                        <IonIcon icon={logoApple} className={`text-xl border-[1px] rounded-full p-2 ${scrolled ? 'text-gray-300 border-gray-600' : 'text-white border-white'} hover:bg-gray-700 cursor-pointer`} />
-                        <IonIcon icon={logoGooglePlaystore} className={`text-xl border-[1px] rounded-full p-2 ${scrolled ? 'text-gray-300 border-gray-600' : 'text-white border-white'} hover:bg-gray-700 cursor-pointer`} />
-                    </div>
-                    <button className={`px-4 py-2 rounded-full ${scrolled ? 'bg-blue-600 text-white hover:bg-blue-700' : 'bg-white text-blue-600 hover:bg-gray-100'} transition-colors`}>
-                        Coming Soon
-                    </button>
-                </div>
-            </div>
-        </header>
-    );
+        {/* Center: Clean Nav Links */}
+        <nav className="hidden md:flex items-center space-x-8">
+          <Link 
+            to="/" 
+            className={`text-sm font-medium transition-colors hover:text-brand-500 ${
+              location.pathname === '/' ? 'text-gray-900 font-semibold' : 'text-gray-600'
+            }`}
+          >
+            Home
+          </Link>
+          <a 
+            href="#experience" 
+            className="text-sm font-medium text-gray-600 hover:text-brand-500 transition-colors"
+          >
+            Experience
+          </a>
+          <Link 
+            to="/features" 
+            className={`text-sm font-medium transition-colors hover:text-brand-500 ${
+              location.pathname === '/features' ? 'text-gray-900 font-semibold' : 'text-gray-600'
+            }`}
+          >
+            Features
+          </Link>
+          <Link 
+            to="/about" 
+            className={`text-sm font-medium transition-colors hover:text-brand-500 ${
+              location.pathname === '/about' ? 'text-gray-900 font-semibold' : 'text-gray-600'
+            }`}
+          >
+            About
+          </Link>
+          <Link 
+            to="/contact" 
+            className={`text-sm font-medium transition-colors hover:text-brand-500 ${
+              location.pathname === '/contact' ? 'text-gray-900 font-semibold' : 'text-gray-600'
+            }`}
+          >
+            Contact
+          </Link>
+        </nav>
+
+        {/* Right: Coral Get Started Button */}
+        <div className="flex items-center space-x-4">
+          <a
+            href="#download"
+            className="bg-brand-500 hover:bg-brand-600 text-white text-sm font-medium px-5 py-2 rounded-full shadow-md shadow-brand-500/25 hover:shadow-brand-500/40 active:scale-95 transition-all duration-200"
+          >
+            Get Started
+          </a>
+        </div>
+      </div>
+    </header>
+  );
 };
 
 export default Header;

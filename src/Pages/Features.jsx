@@ -1,211 +1,168 @@
 import React from 'react';
 import { IonIcon } from '@ionic/react';
-import { fitness, nutrition, heart, time, analytics, notifications, trophy, settings } from 'ionicons/icons';
+import { 
+  fitness, 
+  nutrition, 
+  heart, 
+  time, 
+  analytics, 
+  notifications, 
+  trophy, 
+  sparklesOutline,
+  checkmarkCircle
+} from 'ionicons/icons';
 import { motion } from 'framer-motion';
-import { useTheme } from '../Utils/ThemeContext';
+import { AppStoreBadge } from '../Components/AppLogo';
+import { IPhoneMockup } from '../Components/IPhoneMockup';
 
 const Features = () => {
-    const features = [
-        {
-            icon: fitness,
-            title: "Physical Activity Tracking",
-            description: "Monitor your daily activities, workouts, and exercise routines with detailed analytics and progress tracking.",
-            details: [
-                "Step counting and distance tracking",
-                "Workout session recording",
-                "Exercise library with instructions",
-                "Calorie burn calculation"
-            ]
-        },
-        {
-            icon: nutrition,
-            title: "Dietary Management",
-            description: "Track your nutrition, meal plans, and water intake to maintain a balanced diet.",
-            details: [
-                "Meal planning and tracking",
-                "Nutritional information database",
-                "Water intake monitoring",
-                "Dietary goal setting"
-            ]
-        },
-        {
-            icon: heart,
-            title: "Mental Health & Wellness",
-            description: "Monitor your mental well-being with mood tracking and mindfulness exercises.",
-            details: [
-                "Mood tracking and journaling",
-                "Meditation and breathing exercises",
-                "Stress level monitoring",
-                "Sleep quality analysis"
-            ]
-        },
-        {
-            icon: analytics,
-            title: "Comprehensive Analytics",
-            description: "Get detailed insights into your health metrics with easy-to-understand visualizations.",
-            details: [
-                "Progress charts and graphs",
-                "Health trend analysis",
-                "Personalized recommendations",
-                "Goal achievement tracking"
-            ]
-        },
-        {
-            icon: notifications,
-            title: "Smart Reminders",
-            description: "Stay on track with your health goals through timely notifications and reminders.",
-            details: [
-                "Customizable reminders",
-                "Medication tracking",
-                "Appointment scheduling",
-                "Goal milestone alerts"
-            ]
-        },
-        {
-            icon: trophy,
-            title: "Achievement System",
-            description: "Stay motivated with our gamified achievement system and rewards.",
-            details: [
-                "Daily and weekly challenges",
-                "Achievement badges",
-                "Progress milestones",
-                "Community competitions"
-            ]
-        }
-    ];
+  const features = [
+    {
+      icon: fitness,
+      title: "Physical Activity Tracking",
+      description: "Monitor your daily activities, workouts, and exercise routines with detailed analytics and progress tracking.",
+      details: [
+        "Step counting and distance tracking",
+        "Workout session recording",
+        "Exercise library with instructions",
+        "Calorie burn calculation"
+      ]
+    },
+    {
+      icon: nutrition,
+      title: "Dietary Management",
+      description: "Track your nutrition, meal plans, and water intake to maintain a balanced diet with ease.",
+      details: [
+        "Meal planning and tracking",
+        "Nutritional information database",
+        "Water intake monitoring",
+        "Dietary goal setting"
+      ]
+    },
+    {
+      icon: heart,
+      title: "Mental Health & Wellness",
+      description: "Monitor your mental well-being with mood tracking, journaling, and guided mindfulness exercises.",
+      details: [
+        "Mood tracking and journaling",
+        "Meditation and breathing exercises",
+        "Stress level monitoring",
+        "Sleep quality analysis"
+      ]
+    },
+    {
+      icon: analytics,
+      title: "Comprehensive Analytics",
+      description: "Get detailed insights into your health metrics with easy-to-understand Apple-grade visualizations.",
+      details: [
+        "Progress charts and graphs",
+        "Health trend analysis",
+        "Personalized recommendations",
+        "Goal achievement tracking"
+      ]
+    },
+    {
+      icon: notifications,
+      title: "Smart Reminders",
+      description: "Stay on track with your health goals through timely notifications and proactive reminders.",
+      details: [
+        "Customizable reminders",
+        "Medication tracking",
+        "Appointment scheduling",
+        "Goal milestone alerts"
+      ]
+    },
+    {
+      icon: trophy,
+      title: "Achievement System",
+      description: "Stay motivated with our gamified achievement system, streaks, and milestone badges.",
+      details: [
+        "Daily and weekly challenges",
+        "Achievement badges",
+        "Progress milestones",
+        "Community competitions"
+      ]
+    }
+  ];
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1
-            }
-        }
-    };
+  return (
+    <div className="min-h-screen bg-white pt-28 pb-20">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Header Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-20 space-y-4"
+        >
+          <span className="text-brand-500 font-bold text-xs tracking-widest uppercase">
+            POWERFUL CAPABILITIES
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
+            Designed for every facet of your well-being.
+          </h1>
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+            Discover the intelligent features designed to make daily health logging intuitive and insightful.
+          </p>
+        </motion.div>
 
-    const itemVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.5
-            }
-        }
-    };
-
-    const { isDarkMode } = useTheme();
-
-    return (
-        <div className="min-h-screen bg-gray-900 pt-24 pb-16">
-            <div className="max-w-7xl mx-auto px-4">
-                {/* Header Section */}
-                <motion.div 
-                    initial={{ opacity: 0, y: -20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                    className="text-center mb-16"
-                >
-                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">App Features</h1>
-                    <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                        Discover the comprehensive features designed to help you achieve your health and wellness goals.
-                    </p>
-                </motion.div>
-
-                {/* Features Grid */}
-                <motion.div 
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                >
-                    {features.map((feature, index) => (
-                        <motion.div
-                            key={index}
-                            variants={itemVariants}
-                            whileHover={{ scale: 1.05 }}
-                            className="bg-gray-800 rounded-xl p-6 hover:bg-gray-700 transition-colors relative overflow-hidden group"
-                        >
-                            {/* Pentagon Background */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                            
-                            {/* Pentagon Shape */}
-                            <div className="absolute -right-16 -top-16 w-32 h-32 bg-blue-500/20 rotate-45 transform group-hover:scale-150 transition-transform duration-300" />
-                            <div className="absolute -left-16 -bottom-16 w-32 h-32 bg-purple-500/20 rotate-45 transform group-hover:scale-150 transition-transform duration-300" />
-
-                            <motion.div 
-                                initial={{ scale: 0 }}
-                                whileInView={{ scale: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="flex items-center mb-4 relative z-10"
-                            >
-                                <IonIcon icon={feature.icon} className="text-4xl text-blue-400 mr-4" />
-                                <h3 className="text-xl font-semibold text-white">{feature.title}</h3>
-                            </motion.div>
-                            <p className="text-gray-300 mb-4 relative z-10">{feature.description}</p>
-                            <motion.ul 
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
-                                className="space-y-2 relative z-10"
-                            >
-                                {feature.details.map((detail, idx) => (
-                                    <motion.li 
-                                        key={idx}
-                                        initial={{ x: -20, opacity: 0 }}
-                                        whileInView={{ x: 0, opacity: 1 }}
-                                        viewport={{ once: true }}
-                                        transition={{ duration: 0.3, delay: idx * 0.1 }}
-                                        className="flex items-center text-gray-400"
-                                    >
-                                        <motion.span 
-                                            initial={{ scale: 0 }}
-                                            whileInView={{ scale: 1 }}
-                                            viewport={{ once: true }}
-                                            className="w-2 h-2 bg-blue-400 rounded-full mr-2"
-                                        />
-                                        {detail}
-                                    </motion.li>
-                                ))}
-                            </motion.ul>
-                        </motion.div>
-                    ))}
-                </motion.div>
-
-                {/* Call to Action */}
-                <motion.div 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="mt-16 text-center"
-                >
-                    <h2 className="text-3xl font-bold text-white mb-4">Ready to Start Your Health Journey?</h2>
-                    <p className="text-gray-300 mb-8">Download our app today and take the first step towards a healthier lifestyle.</p>
-                    <div className="flex justify-center gap-4">
-                        <motion.button 
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors"
-                        >
-                            Comming Soon
-                        </motion.button>
-                        <motion.button 
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
-                            className="border-2 border-blue-400 text-blue-400 px-8 py-3 rounded-full hover:bg-gray-800 transition-colors"
-                        >
-                            Learn More
-                        </motion.button>
-                    </div>
-                </motion.div>
-            </div>
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.08 }}
+              whileHover={{ y: -4 }}
+              className="bg-[#fafafa] rounded-3xl p-8 border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-white border border-gray-100 flex items-center justify-center text-brand-500 shadow-sm mb-6">
+                <IonIcon icon={feature.icon} className="text-2xl" />
+              </div>
+              
+              <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+              <p className="text-sm text-gray-500 mb-6 leading-relaxed">{feature.description}</p>
+              
+              <ul className="space-y-2.5">
+                {feature.details.map((detail, idx) => (
+                  <li key={idx} className="flex items-center text-xs font-medium text-gray-600">
+                    <IonIcon icon={checkmarkCircle} className="text-brand-500 text-sm mr-2 shrink-0" />
+                    <span>{detail}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
         </div>
-    );
+
+        {/* Interactive Feature Demo */}
+        <div className="bg-[#fafafa] rounded-3xl p-8 md:p-14 border border-gray-100 flex flex-col lg:flex-row items-center justify-between gap-10">
+          <div className="max-w-lg space-y-5 text-center lg:text-left">
+            <span className="text-brand-500 font-bold text-xs tracking-widest uppercase">
+              APPLE HEALTH INTEGRATION
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight">
+              Synchronized seamlessly with your iOS devices.
+            </h2>
+            <p className="text-gray-500 text-base leading-relaxed">
+              Swasthya reads and correlates data directly with Apple HealthKit, Siri Shortcuts, and interactive iOS widgets so you never miss a beat.
+            </p>
+            <div className="pt-2 flex justify-center lg:justify-start">
+              <AppStoreBadge />
+            </div>
+          </div>
+
+          <div className="shrink-0">
+            <IPhoneMockup screenType="whats-new" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
 };
 
 export default Features;

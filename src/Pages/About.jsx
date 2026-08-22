@@ -1,110 +1,109 @@
 import React from 'react';
 import { IonIcon } from '@ionic/react';
-import { people, trophy, globe, heart } from 'ionicons/icons';
+import { people, trophy, globe, heart, sparklesOutline, checkmarkCircle } from 'ionicons/icons';
+import { motion } from 'framer-motion';
+import { AppStoreBadge } from '../Components/AppLogo';
 
 const About = () => {
-    const stats = [
-        { number: "1M+", label: "Active Users", icon: people },
-        { number: "50+", label: "Countries", icon: globe },
-        { number: "95%", label: "User Satisfaction", icon: heart },
-        { number: "24/7", label: "Support", icon: trophy }
-    ];
+  const stats = [
+    { number: "1M+", label: "Active Users", icon: people },
+    { number: "50+", label: "Countries Supported", icon: globe },
+    { number: "99.4%", label: "User Satisfaction", icon: heart },
+    { number: "24/7", label: "Proactive AI Guidance", icon: trophy }
+  ];
 
-    const team = [
-        {
-            name: "Dr. Sarah Johnson",
-            role: "Chief Medical Officer",
-            description: "20+ years of experience in preventive healthcare and digital health solutions."
-        },
-        {
-            name: "Michael Chen",
-            role: "Head of Technology",
-            description: "Expert in health tech and AI-driven wellness solutions."
-        },
-        {
-            name: "Dr. Emily Rodriguez",
-            role: "Wellness Director",
-            description: "Specialist in mental health and holistic wellness approaches."
-        }
-    ];
+  return (
+    <div className="min-h-screen bg-white pt-28 pb-20">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Hero Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-center max-w-3xl mx-auto mb-20 space-y-4"
+        >
+          <span className="text-brand-500 font-bold text-xs tracking-widest uppercase">
+            OUR PURPOSE
+          </span>
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight">
+            Empowering healthier lives through intelligent design.
+          </h1>
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
+            We build tools that seamlessly turn complex health metrics into simple, delightful daily actions.
+          </p>
+        </motion.div>
 
-    return (
-        <div className="min-h-screen bg-gray-900 pt-24 pb-16">
-            <div className="max-w-7xl mx-auto px-4">
-                {/* Hero Section */}
-                <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">About Swasthya</h1>
-                    <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                        We're on a mission to revolutionize personal health monitoring through innovative technology and user-centric design.
-                    </p>
-                </div>
-
-                {/* Stats Section */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-                    {stats.map((stat, index) => (
-                        <div key={index} className="bg-gray-800 rounded-xl p-6 text-center">
-                            <IonIcon icon={stat.icon} className="text-4xl text-blue-400 mx-auto mb-4" />
-                            <div className="text-3xl font-bold text-white mb-2">{stat.number}</div>
-                            <div className="text-gray-400">{stat.label}</div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Mission Section */}
-                <div className="bg-gray-800 rounded-xl p-8 mb-16">
-                    <h2 className="text-3xl font-bold text-white mb-6">Our Mission</h2>
-                    <div className="grid md:grid-cols-2 gap-8">
-                        <div>
-                            <p className="text-gray-300 mb-4">
-                                At Swasthya, we believe that everyone deserves access to comprehensive health monitoring tools that are both easy to use and effective. Our mission is to empower individuals to take control of their health journey through innovative technology and personalized insights.
-                            </p>
-                            <p className="text-gray-300">
-                                We combine cutting-edge technology with medical expertise to create a platform that not only tracks health metrics but also provides actionable insights and recommendations for better health outcomes.
-                            </p>
-                        </div>
-                        <div className="space-y-4">
-                            <h3 className="text-xl font-semibold text-white mb-4">Our Values</h3>
-                            <div className="flex items-center space-x-3">
-                                <IonIcon icon={heart} className="text-2xl text-blue-400" />
-                                <span className="text-gray-300">User-Centric Design</span>
-                            </div>
-                            <div className="flex items-center space-x-3">
-                                <IonIcon icon={trophy} className="text-2xl text-blue-400" />
-                                <span className="text-gray-300">Excellence in Healthcare</span>
-                            </div>
-                            <div className="flex items-center space-x-3">
-                                <IonIcon icon={globe} className="text-2xl text-blue-400" />
-                                <span className="text-gray-300">Global Accessibility</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                {/* Team Section */}
-                {/* <div className="mb-16">
-                    <h2 className="text-3xl font-bold text-white mb-8 text-center">Our Leadership Team</h2>
-                    <div className="grid md:grid-cols-3 gap-8">
-                        {team.map((member, index) => (
-                            <div key={index} className="bg-gray-800 rounded-xl p-6">
-                                <h3 className="text-xl font-semibold text-white mb-2">{member.name}</h3>
-                                <div className="text-blue-400 mb-4">{member.role}</div>
-                                <p className="text-gray-300">{member.description}</p>
-                            </div>
-                        ))}
-                    </div>
-                </div> */}
-
-                {/* Call to Action */}
-                <div className="text-center">
-                    <h2 className="text-3xl font-bold text-white mb-4">Join Our Journey</h2>
-                    <p className="text-gray-300 mb-8">Be part of our mission to transform personal health monitoring.</p>
-                    <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors">
-                        Get Started Today
-                    </button>
-                </div>
-            </div>
+        {/* Stats Section */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+          {stats.map((stat, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="bg-[#fafafa] rounded-3xl p-8 text-center border border-gray-100"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-white border border-gray-100 flex items-center justify-center text-brand-500 shadow-sm mx-auto mb-4">
+                <IonIcon icon={stat.icon} className="text-2xl" />
+              </div>
+              <div className="text-3xl font-extrabold text-gray-900 mb-1">{stat.number}</div>
+              <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide">{stat.label}</div>
+            </motion.div>
+          ))}
         </div>
-    );
+
+        {/* Mission Section */}
+        <div className="bg-[#fafafa] rounded-3xl p-8 md:p-14 border border-gray-100 mb-20">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-4">
+              <span className="text-brand-500 font-bold text-xs tracking-widest uppercase">
+                THE SWASTHYA VISION
+              </span>
+              <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">
+                Health tracking that respects your time.
+              </h2>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                Most health applications are cluttered and tedious to update. At Swasthya, we believe personal well-being should feel as smooth and natural as glancing at your calendar.
+              </p>
+              <p className="text-gray-500 text-sm leading-relaxed">
+                We blend Apple-quality craftsmanship, state-of-the-art AI parsing, and clinical data models to give you real peace of mind.
+              </p>
+            </div>
+
+            <div className="space-y-4 bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+              <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wide mb-4">Our Core Values</h3>
+              {[
+                { title: "User-Centric Privacy", desc: "Your health records are end-to-end encrypted and on-device first." },
+                { title: "Clarity Over Noise", desc: "No confusing medical jargon—only actionable insights." },
+                { title: "Seamless Integration", desc: "Works flawlessly with Apple Health, Siri, and widgets." }
+              ].map((val, idx) => (
+                <div key={idx} className="flex items-start space-x-3">
+                  <IonIcon icon={checkmarkCircle} className="text-brand-500 text-lg mt-0.5 shrink-0" />
+                  <div>
+                    <h4 className="font-semibold text-xs text-gray-900">{val.title}</h4>
+                    <p className="text-xs text-gray-400">{val.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center max-w-xl mx-auto space-y-6">
+          <h2 className="text-3xl font-extrabold text-gray-900 tracking-tight">
+            Be part of the next era of health.
+          </h2>
+          <div className="flex justify-center">
+            <AppStoreBadge />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
 };
 
-export default About; 
+export default About;

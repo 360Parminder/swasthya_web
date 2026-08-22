@@ -7,7 +7,7 @@ import { ThemeProvider } from './Utils/ThemeContext'
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen flex flex-col bg-white dark:bg-gray-900 transition-colors duration-200">
+      <div className="min-h-screen flex flex-col bg-white text-gray-900 selection:bg-red-100 selection:text-red-600 font-sans">
         <Header />
         <main className="flex-grow">
           <AppRoutes />
