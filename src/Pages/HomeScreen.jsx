@@ -2,17 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AppLogo, AppStoreBadge } from '../Components/AppLogo';
 import { IPhoneMockup } from '../Components/IPhoneMockup';
-import { IonIcon } from '@ionic/react';
 import { 
-  fitnessOutline, 
-  nutritionOutline, 
-  bedOutline, 
-  heartOutline, 
-  refreshOutline, 
-  sparklesOutline,
-  shieldCheckmarkOutline,
-  pulseOutline
-} from 'ionicons/icons';
+  RefreshIcon, 
+  AiBrain01Icon, 
+  Clock01Icon, 
+  Calendar03Icon, 
+  CloudIcon, 
+  UserMultiple02Icon, 
+  Notification01Icon, 
+  SparklesIcon, 
+  ArrowDown01Icon,
+  ArrowRight01Icon
+} from 'hugeicons-react';
 import { Link } from 'react-router-dom';
 
 const HomeScreen = () => {
@@ -58,7 +59,7 @@ const HomeScreen = () => {
           className="flex items-center space-x-2 bg-white/90 hover:bg-white text-gray-700 text-xs font-semibold px-4 py-2.5 rounded-full shadow-lg border border-gray-200 backdrop-blur-md hover:shadow-xl hover:text-brand-500 transition-all group"
           title="Replay center-to-hero opening animation"
         >
-          <IonIcon icon={refreshOutline} className="text-base group-hover:rotate-180 transition-transform duration-500" />
+          <RefreshIcon size={16} className="group-hover:rotate-180 transition-transform duration-500" />
           <span>Replay Intro</span>
         </button>
       </div>
@@ -568,56 +569,32 @@ const HomeScreen = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl mx-auto">
             {[
               {
-                icon: (
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                  </svg>
-                ),
+                icon: <AiBrain01Icon size={22} className="text-white" />,
                 title: "AI-Powered Scheduling",
                 desc: "Intelligent scheduling that learns your preferences and optimizes your time."
               },
               {
-                icon: (
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                ),
+                icon: <Clock01Icon size={22} className="text-white" />,
                 title: "Smart Time Blocking",
                 desc: "Automatically block time for focused work and personal activities."
               },
               {
-                icon: (
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                ),
+                icon: <Calendar03Icon size={22} className="text-white" />,
                 title: "Predictive Event Planning",
                 desc: "AI suggests optimal times for meetings and events based on your habits."
               },
               {
-                icon: (
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 00-9.78 2.096A4.001 4.001 0 003 15z" />
-                  </svg>
-                ),
+                icon: <CloudIcon size={22} className="text-white" />,
                 title: "Cloud Sync",
                 desc: "Access your schedule across all devices in real-time."
               },
               {
-                icon: (
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                ),
+                icon: <UserMultiple02Icon size={22} className="text-white" />,
                 title: "Team Collaboration",
                 desc: "Easily coordinate schedules with team members and clients."
               },
               {
-                icon: (
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                  </svg>
-                ),
+                icon: <Notification01Icon size={22} className="text-white" />,
                 title: "Smart Reminders",
                 desc: "Contextual notifications that adapt to your schedule and priorities."
               }
@@ -951,9 +928,7 @@ const FaqItem = ({ question, answer }) => {
           {question}
         </span>
         <span className={`ml-4 text-gray-400 group-hover:text-brand-500 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}>
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-          </svg>
+          <ArrowDown01Icon size={18} />
         </span>
       </button>
 

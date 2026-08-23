@@ -1,15 +1,20 @@
 import React from 'react';
-import { IonIcon } from '@ionic/react';
-import { people, trophy, globe, heart, sparklesOutline, checkmarkCircle } from 'ionicons/icons';
+import { 
+  UserGroupIcon, 
+  Award01Icon, 
+  Globe02Icon, 
+  FavouriteIcon, 
+  CheckmarkCircle02Icon 
+} from 'hugeicons-react';
 import { motion } from 'framer-motion';
 import { AppStoreBadge } from '../Components/AppLogo';
 
 const About = () => {
   const stats = [
-    { number: "1M+", label: "Active Users", icon: people },
-    { number: "50+", label: "Countries Supported", icon: globe },
-    { number: "99.4%", label: "User Satisfaction", icon: heart },
-    { number: "24/7", label: "Proactive AI Guidance", icon: trophy }
+    { number: "1M+", label: "Active Users", icon: <UserGroupIcon size={24} /> },
+    { number: "50+", label: "Countries Supported", icon: <Globe02Icon size={24} /> },
+    { number: "99.4%", label: "User Satisfaction", icon: <FavouriteIcon size={24} /> },
+    { number: "24/7", label: "Proactive AI Guidance", icon: <Award01Icon size={24} /> }
   ];
 
   return (
@@ -46,7 +51,7 @@ const About = () => {
               className="bg-[#fafafa] rounded-3xl p-8 text-center border border-gray-100"
             >
               <div className="w-12 h-12 rounded-2xl bg-white border border-gray-100 flex items-center justify-center text-brand-500 shadow-sm mx-auto mb-4">
-                <IonIcon icon={stat.icon} className="text-2xl" />
+                {stat.icon}
               </div>
               <div className="text-3xl font-extrabold text-gray-900 mb-1">{stat.number}</div>
               <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide">{stat.label}</div>
@@ -80,7 +85,7 @@ const About = () => {
                 { title: "Seamless Integration", desc: "Works flawlessly with Apple Health, Siri, and widgets." }
               ].map((val, idx) => (
                 <div key={idx} className="flex items-start space-x-3">
-                  <IonIcon icon={checkmarkCircle} className="text-brand-500 text-lg mt-0.5 shrink-0" />
+                  <CheckmarkCircle02Icon size={20} className="text-brand-500 shrink-0 mt-0.5" />
                   <div>
                     <h4 className="font-semibold text-xs text-gray-900">{val.title}</h4>
                     <p className="text-xs text-gray-400">{val.desc}</p>

@@ -1,17 +1,16 @@
 import React from 'react';
-import { IonIcon } from '@ionic/react';
 import { 
-  calendarOutline, 
-  notificationsOutline, 
-  searchOutline, 
-  addOutline, 
-  listOutline, 
-  mailOutline, 
-  timeOutline, 
-  navigateOutline, 
-  videocam,
-  chevronBackOutline
-} from 'ionicons/icons';
+  Calendar03Icon, 
+  Notification01Icon, 
+  Search01Icon, 
+  Add01Icon, 
+  ListViewIcon, 
+  Mail01Icon, 
+  Clock01Icon, 
+  Navigation03Icon, 
+  Video01Icon,
+  ArrowLeft01Icon
+} from 'hugeicons-react';
 
 export const IPhoneMockup = ({ 
   screenType = 'day-schedule', 
@@ -81,13 +80,13 @@ const renderScreenContent = (type) => {
           {/* Header */}
           <div className="px-3 pt-1 pb-2 flex justify-between items-center border-b border-gray-100">
             <div className="flex items-center text-brand-500 font-medium text-xs">
-              <IonIcon icon={chevronBackOutline} className="text-sm mr-0.5" />
+              <ArrowLeft01Icon size={14} className="mr-0.5" />
               <span>July</span>
             </div>
-            <div className="flex space-x-3 text-brand-500 text-sm">
-              <IonIcon icon={listOutline} />
-              <IonIcon icon={searchOutline} />
-              <IonIcon icon={addOutline} />
+            <div className="flex space-x-3 text-brand-500 text-sm items-center">
+              <ListViewIcon size={14} />
+              <Search01Icon size={14} />
+              <Add01Icon size={14} />
             </div>
           </div>
 
@@ -140,13 +139,13 @@ const renderScreenContent = (type) => {
           {/* Header */}
           <div className="px-3 pt-1 pb-1 flex justify-between items-center">
             <div className="flex items-center text-brand-500 font-medium text-xs">
-              <IonIcon icon={chevronBackOutline} className="text-sm mr-0.5" />
+              <ArrowLeft01Icon size={14} className="mr-0.5" />
               <span>2023</span>
             </div>
-            <div className="flex space-x-3 text-brand-500 text-sm">
-              <IonIcon icon={calendarOutline} />
-              <IonIcon icon={searchOutline} />
-              <IonIcon icon={addOutline} />
+            <div className="flex space-x-3 text-brand-500 text-sm items-center">
+              <Calendar03Icon size={14} />
+              <Search01Icon size={14} />
+              <Add01Icon size={14} />
             </div>
           </div>
 
@@ -198,7 +197,7 @@ const renderScreenContent = (type) => {
           <div className="space-y-3.5 px-1 my-auto">
             <div className="flex items-start space-x-3">
               <div className="w-7 h-7 rounded-lg bg-red-50 flex items-center justify-center text-brand-500 shrink-0">
-                <IonIcon icon={mailOutline} className="text-sm" />
+                <Mail01Icon size={15} />
               </div>
               <div className="text-left">
                 <h4 className="font-semibold text-gray-900 text-[11px]">Found Events</h4>
@@ -210,7 +209,7 @@ const renderScreenContent = (type) => {
 
             <div className="flex items-start space-x-3">
               <div className="w-7 h-7 rounded-lg bg-red-50 flex items-center justify-center text-brand-500 shrink-0">
-                <IonIcon icon={timeOutline} className="text-sm" />
+                <Clock01Icon size={15} />
               </div>
               <div className="text-left">
                 <h4 className="font-semibold text-gray-900 text-[11px]">Time to Leave</h4>
@@ -222,7 +221,7 @@ const renderScreenContent = (type) => {
 
             <div className="flex items-start space-x-3">
               <div className="w-7 h-7 rounded-lg bg-red-50 flex items-center justify-center text-brand-500 shrink-0">
-                <IonIcon icon={navigateOutline} className="text-sm" />
+                <Navigation03Icon size={15} />
               </div>
               <div className="text-left">
                 <h4 className="font-semibold text-gray-900 text-[11px]">Location Suggestions</h4>
@@ -412,7 +411,7 @@ const renderScreenContent = (type) => {
           {/* Header */}
           <div className="bg-white px-3 py-2 flex justify-between items-center border-b border-gray-200">
             <div className="flex items-center text-brand-500 text-[11px]">
-              <IonIcon icon={chevronBackOutline} className="mr-0.5" />
+              <ArrowLeft01Icon size={14} className="mr-0.5" />
               <span>Jul 21</span>
             </div>
             <span className="font-semibold text-[11px]">Event Details</span>
@@ -470,7 +469,7 @@ const renderScreenContent = (type) => {
           {/* Header */}
           <div className="bg-white px-3 py-2 flex justify-between items-center border-b border-gray-200">
             <div className="flex items-center text-brand-500 text-[11px]">
-              <IonIcon icon={chevronBackOutline} className="mr-0.5" />
+              <ArrowLeft01Icon size={14} className="mr-0.5" />
               <span>Sep 7</span>
             </div>
             <span className="font-semibold text-[11px]">Event Details</span>
@@ -486,7 +485,7 @@ const renderScreenContent = (type) => {
             <div className="bg-white rounded-xl p-2.5 flex justify-between items-center shadow-sm">
               <div className="flex items-center space-x-2">
                 <div className="w-6 h-6 rounded-md bg-emerald-500 text-white flex items-center justify-center">
-                  <IonIcon icon={videocam} className="text-xs" />
+                  <Video01Icon size={14} />
                 </div>
                 <span className="font-semibold text-[11px] text-gray-800">FaceTime</span>
               </div>
@@ -494,11 +493,6 @@ const renderScreenContent = (type) => {
                 <button className="bg-gray-100 text-blue-600 font-bold px-2.5 py-0.5 rounded-full text-[9.5px] active:bg-gray-200">
                   Join
                 </button>
-                <div className="text-blue-500 text-xs">
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-                  </svg>
-                </div>
               </div>
             </div>
 

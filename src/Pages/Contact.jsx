@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
-import { IonIcon } from '@ionic/react';
-import { mailOutline, callOutline, locationOutline, timeOutline, checkmarkCircle } from 'ionicons/icons';
+import { 
+  Mail01Icon, 
+  Call02Icon, 
+  Location01Icon, 
+  Clock01Icon, 
+  CheckmarkCircle02Icon 
+} from 'hugeicons-react';
 import { motion } from 'framer-motion';
 
 const Contact = () => {
@@ -56,7 +61,7 @@ const Contact = () => {
               <div className="space-y-5">
                 <div className="flex items-start space-x-4">
                   <div className="w-10 h-10 rounded-xl bg-white border border-gray-100 flex items-center justify-center text-brand-500 shadow-sm shrink-0">
-                    <IonIcon icon={mailOutline} className="text-xl" />
+                    <Mail01Icon size={20} />
                   </div>
                   <div>
                     <h3 className="text-xs font-semibold text-gray-400 uppercase">Email Support</h3>
@@ -66,7 +71,7 @@ const Contact = () => {
 
                 <div className="flex items-start space-x-4">
                   <div className="w-10 h-10 rounded-xl bg-white border border-gray-100 flex items-center justify-center text-brand-500 shadow-sm shrink-0">
-                    <IonIcon icon={callOutline} className="text-xl" />
+                    <Call02Icon size={20} />
                   </div>
                   <div>
                     <h3 className="text-xs font-semibold text-gray-400 uppercase">Direct Phone</h3>
@@ -76,7 +81,7 @@ const Contact = () => {
 
                 <div className="flex items-start space-x-4">
                   <div className="w-10 h-10 rounded-xl bg-white border border-gray-100 flex items-center justify-center text-brand-500 shadow-sm shrink-0">
-                    <IonIcon icon={locationOutline} className="text-xl" />
+                    <Location01Icon size={20} />
                   </div>
                   <div>
                     <h3 className="text-xs font-semibold text-gray-400 uppercase">Location</h3>
@@ -86,7 +91,7 @@ const Contact = () => {
 
                 <div className="flex items-start space-x-4">
                   <div className="w-10 h-10 rounded-xl bg-white border border-gray-100 flex items-center justify-center text-brand-500 shadow-sm shrink-0">
-                    <IonIcon icon={timeOutline} className="text-xl" />
+                    <Clock01Icon size={20} />
                   </div>
                   <div>
                     <h3 className="text-xs font-semibold text-gray-400 uppercase">Response Hours</h3>
@@ -110,7 +115,7 @@ const Contact = () => {
             {submitted ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-12 space-y-4">
                 <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center text-3xl">
-                  <IonIcon icon={checkmarkCircle} />
+                  <CheckmarkCircle02Icon size={32} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900">Message Received!</h3>
                 <p className="text-sm text-gray-500 max-w-xs">

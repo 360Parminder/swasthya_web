@@ -1,16 +1,13 @@
 import React from 'react';
-import { IonIcon } from '@ionic/react';
 import { 
-  fitness, 
-  nutrition, 
-  heart, 
-  time, 
-  analytics, 
-  notifications, 
-  trophy, 
-  sparklesOutline,
-  checkmarkCircle
-} from 'ionicons/icons';
+  Activity01Icon, 
+  AppleIcon, 
+  FavouriteIcon, 
+  Analytics01Icon, 
+  Notification01Icon, 
+  Award01Icon,
+  CheckmarkCircle02Icon
+} from 'hugeicons-react';
 import { motion } from 'framer-motion';
 import { AppStoreBadge } from '../Components/AppLogo';
 import { IPhoneMockup } from '../Components/IPhoneMockup';
@@ -18,7 +15,7 @@ import { IPhoneMockup } from '../Components/IPhoneMockup';
 const Features = () => {
   const features = [
     {
-      icon: fitness,
+      icon: <Activity01Icon size={24} />,
       title: "Physical Activity Tracking",
       description: "Monitor your daily activities, workouts, and exercise routines with detailed analytics and progress tracking.",
       details: [
@@ -29,7 +26,7 @@ const Features = () => {
       ]
     },
     {
-      icon: nutrition,
+      icon: <AppleIcon size={24} />,
       title: "Dietary Management",
       description: "Track your nutrition, meal plans, and water intake to maintain a balanced diet with ease.",
       details: [
@@ -40,7 +37,7 @@ const Features = () => {
       ]
     },
     {
-      icon: heart,
+      icon: <FavouriteIcon size={24} />,
       title: "Mental Health & Wellness",
       description: "Monitor your mental well-being with mood tracking, journaling, and guided mindfulness exercises.",
       details: [
@@ -51,7 +48,7 @@ const Features = () => {
       ]
     },
     {
-      icon: analytics,
+      icon: <Analytics01Icon size={24} />,
       title: "Comprehensive Analytics",
       description: "Get detailed insights into your health metrics with easy-to-understand Apple-grade visualizations.",
       details: [
@@ -62,7 +59,7 @@ const Features = () => {
       ]
     },
     {
-      icon: notifications,
+      icon: <Notification01Icon size={24} />,
       title: "Smart Reminders",
       description: "Stay on track with your health goals through timely notifications and proactive reminders.",
       details: [
@@ -73,7 +70,7 @@ const Features = () => {
       ]
     },
     {
-      icon: trophy,
+      icon: <Award01Icon size={24} />,
       title: "Achievement System",
       description: "Stay motivated with our gamified achievement system, streaks, and milestone badges.",
       details: [
@@ -120,7 +117,7 @@ const Features = () => {
               className="bg-[#fafafa] rounded-3xl p-8 border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all"
             >
               <div className="w-12 h-12 rounded-2xl bg-white border border-gray-100 flex items-center justify-center text-brand-500 shadow-sm mb-6">
-                <IonIcon icon={feature.icon} className="text-2xl" />
+                {feature.icon}
               </div>
               
               <h3 className="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
@@ -129,7 +126,7 @@ const Features = () => {
               <ul className="space-y-2.5">
                 {feature.details.map((detail, idx) => (
                   <li key={idx} className="flex items-center text-xs font-medium text-gray-600">
-                    <IonIcon icon={checkmarkCircle} className="text-brand-500 text-sm mr-2 shrink-0" />
+                    <CheckmarkCircle02Icon size={16} className="text-brand-500 mr-2 shrink-0" />
                     <span>{detail}</span>
                   </li>
                 ))}
