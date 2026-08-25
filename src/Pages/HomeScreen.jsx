@@ -490,8 +490,8 @@ const HomeScreen = () => {
               </div>
 
               {/* iPhone Mockup emerging from bottom */}
-              <div className={clsx('w-full', 'flex', 'justify-center', 'h-[340px]', 'sm:h-[400px]', 'overflow-hidden', 'relative')}>
-                <div className={clsx('transform', 'translate-y-2', 'group-hover:-translate-y-1', 'transition-transform', 'duration-500')}>
+              <div className={clsx('w-full', 'flex', 'justify-center', 'h-[380px]', 'sm:h-[440px]', 'overflow-hidden', 'relative')}>
+                <div className={clsx('transform', 'translate-y-8', 'group-hover:translate-y-2', 'transition-transform', 'duration-500')}>
                   <IPhoneMockup screenType="medication-history" alt="Medication Adherence History" />
                 </div>
               </div>
@@ -518,8 +518,8 @@ const HomeScreen = () => {
                 </div>
 
                 {/* iPhone Mockup emerging from bottom */}
-                <div className={clsx('w-full', 'flex', 'justify-center', 'h-[320px]', 'sm:h-[370px]', 'overflow-hidden', 'relative')}>
-                  <div className={clsx('transform', 'translate-y-2', 'group-hover:-translate-y-1', 'transition-transform', 'duration-500')}>
+                <div className={clsx('w-full', 'flex', 'justify-center', 'h-[360px]', 'sm:h-[410px]', 'overflow-hidden', 'relative')}>
+                  <div className={clsx('transform', 'translate-y-8', 'group-hover:translate-y-2', 'transition-transform', 'duration-500')}>
                     <IPhoneMockup screenType="sleep-schedule-calculator" alt="Sleep Schedule Calculator" />
                   </div>
                 </div>
@@ -543,8 +543,8 @@ const HomeScreen = () => {
                 </div>
 
                 {/* iPhone Mockup emerging from bottom */}
-                <div className={clsx('w-full', 'flex', 'justify-center', 'h-[320px]', 'sm:h-[370px]', 'overflow-hidden', 'relative')}>
-                  <div className={clsx('transform', 'translate-y-2', 'group-hover:-translate-y-1', 'transition-transform', 'duration-500')}>
+                <div className={clsx('w-full', 'flex', 'justify-center', 'h-[360px]', 'sm:h-[410px]', 'overflow-hidden', 'relative')}>
+                  <div className={clsx('transform', 'translate-y-8', 'group-hover:translate-y-2', 'transition-transform', 'duration-500')}>
                     <IPhoneMockup screenType="care-circle-invitations" alt="Care Circle Invitations" />
                   </div>
                 </div>
@@ -570,8 +570,8 @@ const HomeScreen = () => {
               </div>
 
               {/* iPhone Mockup emerging from bottom */}
-              <div className={clsx('w-full', 'flex', 'justify-center', 'h-[340px]', 'sm:h-[400px]', 'overflow-hidden', 'relative')}>
-                <div className={clsx('transform', 'translate-y-2', 'group-hover:-translate-y-1', 'transition-transform', 'duration-500')}>
+              <div className={clsx('w-full', 'flex', 'justify-center', 'h-[380px]', 'sm:h-[440px]', 'overflow-hidden', 'relative')}>
+                <div className={clsx('transform', 'translate-y-8', 'group-hover:translate-y-2', 'transition-transform', 'duration-500')}>
                   <IPhoneMockup screenType="user-profile-biometrics" alt="User Profile & Biometrics" />
                 </div>
               </div>
