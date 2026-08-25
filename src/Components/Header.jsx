@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { AppLogo } from './AppLogo';
+import { AppLogo, AppStoreBadge } from './AppLogo';
+import clsx from 'clsx';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -23,18 +24,18 @@ const Header = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/85 backdrop-blur-md border-b border-gray-100/80 shadow-sm py-3' 
-          : 'bg-transparent py-5'
+          ? 'bg-white/85 backdrop-blur-md border-b border-gray-100/80 shadow-sm py-2.5' 
+          : 'bg-transparent py-4'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 flex justify-between items-center">
+      <div className={clsx('max-w-7xl', 'mx-auto', 'px-4', 'sm:px-8', 'flex', 'justify-between', 'items-center')}>
         {/* Left: Logo & Brand Name */}
-        <Link to="/" className="flex items-center space-x-2 group">
+        <Link to="/" className={clsx('flex', 'items-center', 'space-x-2', 'group', 'shrink-0')}>
           <AppLogo size="header" showText={true} />
         </Link>
 
         {/* Center: Clean Nav Links */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className={clsx('hidden', 'lg:flex', 'items-center', 'space-x-8')}>
           <Link 
             to="/" 
             className={`text-sm font-medium transition-colors hover:text-brand-500 ${
@@ -43,12 +44,6 @@ const Header = () => {
           >
             Home
           </Link>
-          <a 
-            href="#experience" 
-            className="text-sm font-medium text-gray-600 hover:text-brand-500 transition-colors"
-          >
-            Experience
-          </a>
           <Link 
             to="/features" 
             className={`text-sm font-medium transition-colors hover:text-brand-500 ${
@@ -75,14 +70,9 @@ const Header = () => {
           </Link>
         </nav>
 
-        {/* Right: Coral Get Started Button */}
-        <div className="flex items-center space-x-4">
-          <a
-            href="#download"
-            className="bg-brand-500 hover:bg-brand-600 text-white text-sm font-medium px-5 py-2 rounded-full shadow-md shadow-brand-500/25 hover:shadow-brand-500/40 active:scale-95 transition-all duration-200"
-          >
-            Get Started
-          </a>
+        {/* Right: App Store & Play Store Badges */}
+        <div className={clsx('flex', 'items-center')}>
+          <AppStoreBadge compact={true} />
         </div>
       </div>
     </header>

@@ -40,7 +40,7 @@ const About = () => {
         </motion.div>
 
         {/* Stats Section */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
+        {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20">
           {stats.map((stat, index) => (
             <motion.div 
               key={index}
@@ -57,7 +57,7 @@ const About = () => {
               <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide">{stat.label}</div>
             </motion.div>
           ))}
-        </div>
+        </div> */}
 
         {/* Mission Section */}
         <div className="bg-[#fafafa] rounded-3xl p-8 md:p-14 border border-gray-100 mb-20">

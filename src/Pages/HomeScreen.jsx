@@ -17,45 +17,47 @@ import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 const HomeScreen = () => {
-  // Intro animation states: 'center' -> 'moving' -> 'hero'
-  const [introPhase, setIntroPhase] = useState('center');
+  // Intro animation states: 'center' -> 'settled'
+  const [introStep, setIntroStep] = useState('center');
+  const [centerOffset, setCenterOffset] = useState(() => (typeof window !== 'undefined' ? window.innerHeight / 2 - 190 : 220));
 
   useEffect(() => {
-    // Phase 1: Logo starts in center
-    setIntroPhase('center');
+    // Update center offset on window resize
+    const handleResize = () => {
+      setCenterOffset(window.innerHeight / 2 - 190);
+    };
+    window.addEventListener('resize', handleResize);
 
-    // Phase 2: After 900ms, start moving smoothly towards Hero position
+    // Step 1: Hold in center gracefully for 1.1s
+    setIntroStep('center');
+
+    // Step 2: Smooth cinematic glide directly into hero section
     const moveTimer = setTimeout(() => {
-      setIntroPhase('moving');
-    }, 900);
-
-    // Phase 3: Logo reaches hero and unlocks hero content
-    const heroTimer = setTimeout(() => {
-      setIntroPhase('hero');
-    }, 1800);
+      setIntroStep('settled');
+    }, 1100);
 
     return () => {
+      window.removeEventListener('resize', handleResize);
       clearTimeout(moveTimer);
-      clearTimeout(heroTimer);
     };
   }, []);
 
-  const isIntroMovingOrHero = introPhase === 'moving' || introPhase === 'hero';
-  const isHeroReady = introPhase === 'hero';
+  const isHeroReady = introStep === 'settled';
 
   return (
     <div className={clsx('min-h-screen', 'bg-white', 'text-gray-900', 'font-sans', 'selection:bg-brand-100', 'selection:text-brand-600', 'relative', 'overflow-x-hidden')}>
 
       {/* ========================================================================= */}
-      {/* FULLSCREEN INTRO OVERLAY (Shows logo in center, then flies to hero spot) */}
+      {/* FULLSCREEN INTRO OVERLAY (Covers entire screen including header) */}
       {/* ========================================================================= */}
       <AnimatePresence>
         {!isHeroReady && (
           <motion.div 
             initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className={clsx('fixed', 'inset-0', 'z-40', 'bg-white/95', 'backdrop-blur-sm', 'pointer-events-none', 'flex', 'items-center', 'justify-center')}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            className={clsx('fixed', 'inset-0', 'z-[55]', 'bg-white', 'pointer-events-none')}
           />
         )}
       </AnimatePresence>
@@ -63,79 +65,45 @@ const HomeScreen = () => {
       {/* HERO SECTION */}
       <section className={clsx('relative', 'pt-32', 'pb-20', 'md:pt-40', 'md:pb-28', 'px-4', 'sm:px-6', 'lg:px-8', 'max-w-7xl', 'mx-auto', 'flex', 'flex-col', 'items-center', 'text-center')}>
         
-        {/* Animated Flying Logo Anchor */}
+        {/* Animated Flying Logo Anchor (Single persistent element gliding from center to hero) */}
         <div className={clsx('relative', 'mb-6', 'flex', 'flex-col', 'items-center', 'justify-center', 'min-h-[110px]')}>
-          {introPhase === 'center' ? (
-            /* Phase 1: Logo centered in the entire viewport */
-            <motion.div
-              key={`center-${replayKey}`}
-              initial={{ scale: 0.8, opacity: 0, y: 20 }}
-              animate={{ scale: 1.1, opacity: 1, y: 0 }}
-              transition={{ 
-                type: 'spring', 
-                stiffness: 260, 
-                damping: 20, 
-                duration: 0.6 
-              }}
-              className={clsx('fixed', 'inset-0', 'z-50', 'flex', 'flex-col', 'items-center', 'justify-center', 'pointer-events-none')}
-            >
-              <div className={clsx('relative', 'flex', 'flex-col', 'items-center')}>
-                {/* Glow ring behind logo */}
-                <div className={clsx('absolute', '-inset-4', 'bg-brand-500/20', 'rounded-full', 'blur-2xl', 'animate-pulse')} />
-                <AppLogo size="center-intro" showText={true} />
-              </div>
-            </motion.div>
-          ) : introPhase === 'moving' ? (
-            /* Phase 2: Logo animating seamlessly from center to hero anchor */
-            <motion.div
-              key={`moving-${replayKey}`}
-              initial={{ 
-                position: 'fixed', 
-                top: '50%', 
-                left: '50%', 
-                x: '-50%', 
-                y: '-50%', 
-                scale: 1.1,
-                zIndex: 50 
-              }}
-              animate={{ 
-                position: 'fixed', 
-                top: '190px', 
-                left: '50%', 
-                x: '-50%', 
-                y: '0%', 
-                scale: 0.75,
-                zIndex: 50 
-              }}
-              transition={{ 
-                type: 'spring', 
-                stiffness: 120, 
-                damping: 18, 
-                mass: 0.9 
-              }}
-              className={clsx('pointer-events-none', 'flex', 'flex-col', 'items-center')}
-            >
-              <AppLogo size="center-intro" showText={true} />
-            </motion.div>
-          ) : (
-            /* Phase 3: Logo settled in Hero */
-            <motion.div
-              key={`hero-${replayKey}`}
-              initial={{ scale: 0.9, opacity: 0.8 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.3 }}
-              className={clsx('flex', 'flex-col', 'items-center')}
-            >
-              <AppLogo size="hero" showText={true} />
-            </motion.div>
-          )}
+          <motion.div
+            initial={{ 
+              y: centerOffset, 
+              scale: 1.35, 
+              opacity: 0,
+              zIndex: 60 
+            }}
+            animate={
+              introStep === 'center'
+                ? { 
+                    y: centerOffset, 
+                    scale: 1.35, 
+                    opacity: 1,
+                    zIndex: 60 
+                  }
+                : { 
+                    y: 0, 
+                    scale: 1, 
+                    opacity: 1,
+                    zIndex: 10 
+                  }
+            }
+            transition={{ 
+              duration: introStep === 'center' ? 0.7 : 1.35, 
+              ease: [0.22, 1, 0.36, 1] 
+            }}
+            className={clsx('relative', 'flex', 'flex-col', 'items-center')}
+          >
+            <AppLogo size="hero" showText={true} />
+          </motion.div>
         </div>
 
         {/* Hero Title & Subtitle */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isHeroReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          initial={{ opacity: 0, y: 25 }}
+          animate={isHeroReady ? { opacity: 1, y: 0 } : { opacity: 0, y: 25 }}
+          transition={{ duration: 1.0, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className={clsx('max-w-3xl', 'mx-auto', 'space-y-4')}
         >
           <h1 className={clsx('text-4xl', 'sm:text-5xl', 'md:text-6xl', 'font-extrabold', 'tracking-tight', 'text-gray-900', 'leading-[1.12]')}>
@@ -349,14 +317,7 @@ const HomeScreen = () => {
               <p className={clsx('text-base', 'sm:text-lg', 'text-gray-500', 'font-normal', 'max-w-md', 'mx-auto', 'lg:mx-0', 'leading-relaxed')}>
                 Intelligent dose scheduling with automated days-of-supply depletion forecasts, low-stock warnings, and 1-tap quick refills.
               </p>
-              <div className="pt-2">
-                <a
-                  href="#download"
-                  className={clsx('inline-block', 'bg-brand-500', 'hover:bg-brand-600', 'text-white', 'font-medium', 'text-sm', 'px-7', 'py-3', 'rounded-full', 'shadow-md', 'shadow-brand-500/25', 'hover:shadow-brand-500/40', 'active:scale-95', 'transition-all', 'duration-200')}
-                >
-                  Get Started
-                </a>
-              </div>
+             
             </motion.div>
           </div>
 
@@ -375,14 +336,7 @@ const HomeScreen = () => {
               <p className={clsx('text-base', 'sm:text-lg', 'text-gray-500', 'font-normal', 'max-w-md', 'mx-auto', 'lg:mx-0', 'leading-relaxed')}>
                 Optimal 90-minute sleep cycle calculator, hypnogram sleep stage breakdowns (Deep, REM, Core), and 7-day recovery trend charts.
               </p>
-              <div className="pt-2">
-                <a
-                  href="#download"
-                  className={clsx('inline-block', 'bg-brand-500', 'hover:bg-brand-600', 'text-white', 'font-medium', 'text-sm', 'px-7', 'py-3', 'rounded-full', 'shadow-md', 'shadow-brand-500/25', 'hover:shadow-brand-500/40', 'active:scale-95', 'transition-all', 'duration-200')}
-                >
-                  Get Started
-                </a>
-              </div>
+            
             </motion.div>
 
             <motion.div 
@@ -421,14 +375,7 @@ const HomeScreen = () => {
               <p className={clsx('text-base', 'sm:text-lg', 'text-gray-500', 'font-normal', 'max-w-md', 'mx-auto', 'lg:mx-0', 'leading-relaxed')}>
                 Prescribe and monitor medications for family members and children with real-time adherence updates and instant invite connections.
               </p>
-              <div className="pt-2">
-                <a
-                  href="#download"
-                  className={clsx('inline-block', 'bg-brand-500', 'hover:bg-brand-600', 'text-white', 'font-medium', 'text-sm', 'px-7', 'py-3', 'rounded-full', 'shadow-md', 'shadow-brand-500/25', 'hover:shadow-brand-500/40', 'active:scale-95', 'transition-all', 'duration-200')}
-                >
-                  Get Started
-                </a>
-              </div>
+             
             </motion.div>
           </div>
 
@@ -1121,22 +1068,9 @@ const HomeScreen = () => {
               Start your wellness journey with Swasthya, a comprehensive health management app designed to help you live a healthier, happier life.
             </p>
 
-            <a
-              href="#download"
-              className={clsx(
-                'inline-flex', 'items-center', 'gap-1.5',
-                'bg-white', 'hover:bg-gray-50',
-                'text-gray-950', 'font-semibold', 'text-sm',
-                'px-7', 'py-2.5',
-                'rounded-full', 'border', 'border-gray-200',
-                'shadow-sm', 'hover:shadow',
-                'active:scale-[0.97]', 'transition-all', 'duration-200'
-              )}
-            >
-              <span>Get Started</span>
-              <span className={clsx('text-xs', 'font-bold')}>&gt;</span>
-            </a>
-
+            <div className="pt-1">
+              <AppStoreBadge />
+            </div>
           </div>
 
         </div>
