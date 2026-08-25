@@ -1,48 +1,84 @@
-# Swasthya - Website Overview
+# Swasthya Web 🌐
 
-## Overview
-Swasthya is the official website for the Swasthya mobile application. It showcases the features of the app, provides download links, and offers customer support and contact information.
+> **Modern Web Portal & Showcase for the Swasthya Health Ecosystem**  
+> Built with **React**, **Vite**, **Tailwind CSS**, and **Lucide React**.
 
-## Features
-- **App Features Showcase:** Detailed information about the app's functionalities, including medication tracking, family health monitoring, meal planning, and personalized workout suggestions.
-- **Download Links:** Direct links to download the Swasthya app from the App Store and Google Play.
-- **Support Section:** FAQs and troubleshooting guides to help users with common issues.
-- **Contact Information:** Get in touch with customer support for assistance.
+---
 
-## Technologies Used
-- **Frontend:** React, Tailwind CSS
-- **Deployment:** AWS / Vercel
+## 🌟 Overview
 
-## Installation & Setup (For Developers)
-1. Clone the repository:
+**Swasthya Web** is the official web portal and showcase platform for the Swasthya application. It introduces users to the Swasthya health management ecosystem, highlights core capabilities (Medication Tracking, Refill Alerts, Sleep Architecture, Care Circle, Hydration, and Fitness Vitals), and provides download links, support documentation, and contact information.
+
+---
+
+## ✨ Features & Sections
+
+- 🚀 **Hero Showcase**: Compelling hero section featuring the official Swasthya brand identity, dynamic typography, and direct App Store / Play Store download actions.
+- 💊 **Medication & Refill Tracking Preview**: Highlights intelligent dose scheduling, adherence monitoring, and automated low-stock warnings.
+- 🤝 **Care Circle & Family Health**: Demonstrates multi-member caregiving and prescription oversight for loved ones.
+- 🌙 **Sleep Suite & Recovery**: Showcases the 90-minute sleep cycle calculator, hypnogram sleep stage breakdowns, and bedtime routines.
+- 📱 **Interactive App Walkthroughs**: Visual feature cards and UI previews displaying the mobile app interface.
+- ❓ **FAQ & Support Hub**: Searchable troubleshooting guides and frequently asked questions for quick user resolution.
+- 📩 **Contact & Inquiries**: Customer support contact channels and inquiry submission.
+- 🎨 **Responsive & Dark-Themed Styling**: Polished responsive layout optimized across mobile, tablet, and desktop screens with custom Tailwind CSS utility styling.
+
+---
+
+## 📂 Project Structure
+
+```
+Swasthya-web/
+├── index.html                     # HTML template entry point
+├── package.json                   # Dependencies and build scripts
+├── vite.config.js                 # Vite bundler configuration
+├── tailwind.config.js             # Tailwind CSS tokens & configurations
+├── public/
+│   └── swasthya.png               # Official Swasthya brand logo
+└── src/
+    ├── components/
+    │   ├── AppLogo.jsx            # Brand logo component
+    │   ├── Header.jsx             # Top navigation bar
+    │   ├── Hero.jsx               # Hero banner section
+    │   ├── Features.jsx           # Core feature cards
+    │   ├── SleepSection.jsx       # Sleep feature showcase
+    │   ├── FAQ.jsx                # Frequently asked questions
+    │   └── Footer.jsx             # Site footer and links
+    ├── App.jsx                    # Main application container
+    └── main.jsx                   # React DOM root render
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- **Node.js** >= 18
+- **npm** or **yarn**
+
+### Setup & Run
+
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/360Parminder/swasthya_web.git
-   ```
-2. Navigate to the project directory:
-   ```bash
    cd swasthya-web
    ```
-3. Install dependencies:
+
+2. **Install dependencies:**
    ```bash
    npm install
    ```
-4. Start the development server:
+
+3. **Start the development server:**
    ```bash
    npm run dev
    ```
-5. Open the browser and visit `http://localhost:3000`
 
-## Contributing
-We welcome contributions! To contribute:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make changes and commit (`git commit -m "Add new feature"`).
-4. Push the branch (`git push origin feature-branch`).
-5. Create a pull request.
+4. **Build for production:**
+   ```bash
+   npm run build
+   ```
 
-## License
+---
+
+## 📄 License
 This project is licensed under the MIT License.
-
-## Contact
-For queries or support, reach out to us at [360.Parminder@gmail.com](mailto:360.Parminder@gmail.com).
-
