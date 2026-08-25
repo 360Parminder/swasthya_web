@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { AppLogo, AppStoreBadge } from '../Components/AppLogo';
 import { IPhoneMockup } from '../Components/IPhoneMockup';
 import { 
-  RefreshIcon, 
   AiBrain01Icon, 
   Clock01Icon, 
   Calendar03Icon, 
@@ -20,7 +19,6 @@ import clsx from 'clsx';
 const HomeScreen = () => {
   // Intro animation states: 'center' -> 'moving' -> 'hero'
   const [introPhase, setIntroPhase] = useState('center');
-  const [replayKey, setReplayKey] = useState(0);
 
   useEffect(() => {
     // Phase 1: Logo starts in center
@@ -40,30 +38,13 @@ const HomeScreen = () => {
       clearTimeout(moveTimer);
       clearTimeout(heroTimer);
     };
-  }, [replayKey]);
-
-  const handleReplay = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    setReplayKey(prev => prev + 1);
-  };
+  }, []);
 
   const isIntroMovingOrHero = introPhase === 'moving' || introPhase === 'hero';
   const isHeroReady = introPhase === 'hero';
 
   return (
     <div className={clsx('min-h-screen', 'bg-white', 'text-gray-900', 'font-sans', 'selection:bg-brand-100', 'selection:text-brand-600', 'relative', 'overflow-x-hidden')}>
-      
-      {/* Replay Intro Button (floating trigger for quick testing) */}
-      <div className={clsx('fixed', 'bottom-6', 'right-6', 'z-40')}>
-        <button
-          onClick={handleReplay}
-          className={clsx('flex', 'items-center', 'space-x-2', 'bg-white/90', 'hover:bg-white', 'text-gray-700', 'text-xs', 'font-semibold', 'px-4', 'py-2.5', 'rounded-full', 'shadow-lg', 'border', 'border-gray-200', 'backdrop-blur-md', 'hover:shadow-xl', 'hover:text-brand-500', 'transition-all', 'group')}
-          title="Replay center-to-hero opening animation"
-        >
-          <RefreshIcon size={16} className={clsx('group-hover:rotate-180', 'transition-transform', 'duration-500')} />
-          <span>Replay Intro</span>
-        </button>
-      </div>
 
       {/* ========================================================================= */}
       {/* FULLSCREEN INTRO OVERLAY (Shows logo in center, then flies to hero spot) */}
