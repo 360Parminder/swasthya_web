@@ -12,6 +12,7 @@ import notificationPermission from './notification_permission.png';
 import sleepRoutineDetails from './sleep_routine_details.png';
 import sleepScheduleCalculator from './sleep_schedule_calculator.png';
 import userProfileBiometrics from './user_profile_biometrics.png';
+import swasthyaLogo from './swasthya.png';
 
 export const AppScreenshots = {
   homeDashboard,
@@ -28,6 +29,8 @@ export const AppScreenshots = {
   sleepRoutineDetails,
   sleepScheduleCalculator,
   userProfileBiometrics,
+  swasthyaLogo,
 };
 
+export { swasthyaLogo };
 export default AppScreenshots;

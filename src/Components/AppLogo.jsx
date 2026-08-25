@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import clsx from 'clsx';
+import { swasthyaLogo } from '../assets/Images';
 
 export const AppLogo = ({ 
   size = 'hero', // 'hero' | 'header' | 'center-intro' | 'small'
@@ -41,10 +42,16 @@ export const AppLogo = ({
 
   return (
     <div className={`flex ${isRowLayout ? 'flex-row items-center' : 'flex-col items-center'} ${className}`}>
-      {/* App Logo Image from /swasthya.png */}
+      {/* App Logo Image bundled by Vite */}
       <img
-        src="/swasthya.png"
+        src={swasthyaLogo || '/swasthya.png'}
         alt="Swasthya Logo"
+        onError={(e) => {
+          // Fallback if direct bundle resolution encounters static path variations
+          if (e.currentTarget.src !== '/swasthya.png') {
+            e.currentTarget.src = '/swasthya.png';
+          }
+        }}
         className={`${getIconSize()} object-contain drop-shadow-sm select-none`}
       />
 
