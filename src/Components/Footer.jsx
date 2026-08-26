@@ -95,6 +95,12 @@ const Footer = () => {
             <Link to="/features" className={clsx('hover:text-gray-900', 'transition-colors')}>
               Features
             </Link>
+            <Link to="/showcase" className={clsx('hover:text-gray-900', 'transition-colors')}>
+              Showcase
+            </Link>
+            <Link to="/about" className={clsx('hover:text-gray-900', 'transition-colors')}>
+              About
+            </Link>
             <Link to="/contact" className={clsx('hover:text-gray-900', 'transition-colors')}>
               Contact
             </Link>

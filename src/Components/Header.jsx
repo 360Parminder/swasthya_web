@@ -28,14 +28,14 @@ const Header = () => {
           : 'bg-transparent py-4'
       }`}
     >
-      <div className={clsx('max-w-7xl', 'mx-auto', 'px-4', 'sm:px-8', 'flex', 'justify-between', 'items-center')}>
+      <div className={clsx('max-w-7xl', 'mx-auto', 'px-4', 'sm:px-8', 'flex', 'justify-between', 'items-center', 'relative')}>
         {/* Left: Logo & Brand Name */}
-        <Link to="/" className={clsx('flex', 'items-center', 'space-x-2', 'group', 'shrink-0')}>
+        <Link to="/" className={clsx('flex', 'items-center', 'space-x-2', 'group', 'shrink-0', 'z-10')}>
           <AppLogo size="header" showText={true} />
         </Link>
 
-        {/* Center: Clean Nav Links */}
-        <nav className={clsx('hidden', 'lg:flex', 'items-center', 'space-x-8')}>
+        {/* Center: Clean Nav Links (Strictly Centered) */}
+        <nav className={clsx('hidden', 'lg:flex', 'items-center', 'space-x-8', 'absolute', 'left-1/2', '-translate-x-1/2', 'z-10')}>
           <Link 
             to="/" 
             className={`text-sm font-medium transition-colors hover:text-brand-500 ${
@@ -51,6 +51,14 @@ const Header = () => {
             }`}
           >
             Features
+          </Link>
+          <Link 
+            to="/showcase" 
+            className={`text-sm font-medium transition-colors hover:text-brand-500 ${
+              location.pathname === '/showcase' ? 'text-gray-900 font-semibold' : 'text-gray-600'
+            }`}
+          >
+            Showcase
           </Link>
           <Link 
             to="/about" 

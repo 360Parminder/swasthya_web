@@ -13,6 +13,7 @@ import sleepRoutineDetails from './sleep_routine_details.png';
 import sleepScheduleCalculator from './sleep_schedule_calculator.png';
 import userProfileBiometrics from './user_profile_biometrics.png';
 import swasthyaLogo from './swasthya.png';
+import iphoneFrame from './iphone_frame.png';
 
 export const AppScreenshots = {
   homeDashboard,
@@ -30,7 +31,8 @@ export const AppScreenshots = {
   sleepScheduleCalculator,
   userProfileBiometrics,
   swasthyaLogo,
+  iphoneFrame,
 };
 
-export { swasthyaLogo };
+export { swasthyaLogo, iphoneFrame };
 export default AppScreenshots;
