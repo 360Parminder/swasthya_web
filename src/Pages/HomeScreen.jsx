@@ -855,7 +855,7 @@ const HomeScreen = () => {
                 <motion.div
                   className={clsx('flex', 'gap-3', 'w-max')}
                   animate={{ x: [-1800, 0] }}
-                  transition={{ repeat: Infinity, duration: 32, ease: 'linear' }}
+                  transition={{ repeat: Infinity, duration: 36, ease: 'linear' }}
                 >
                   {[
                     { name: 'Jill', tag: '@jill', gradient: 'from-pink-500 to-rose-500', text: "I don't know what to say. I'm speechless. This is amazing." },
@@ -887,7 +887,7 @@ const HomeScreen = () => {
                 <motion.div
                   className={clsx('flex', 'gap-3', 'w-max')}
                   animate={{ x: [0, -1800] }}
-                  transition={{ repeat: Infinity, duration: 26, ease: 'linear' }}
+                  transition={{ repeat: Infinity, duration: 36, ease: 'linear' }}
                 >
                   {[
                     { name: 'Jack', tag: '@jack', gradient: 'from-lime-400 to-emerald-500', text: "I've never seen anything like this before. It's amazing." },
@@ -919,7 +919,7 @@ const HomeScreen = () => {
                 <motion.div
                   className={clsx('flex', 'gap-3', 'w-max')}
                   animate={{ x: [-1800, 0] }}
-                  transition={{ repeat: Infinity, duration: 30, ease: 'linear' }}
+                  transition={{ repeat: Infinity, duration: 36, ease: 'linear' }}
                 >
                   {[
                     { name: 'Jane', tag: '@jane', gradient: 'from-violet-400 to-indigo-500', text: "I'm at a loss for words. This is amazing. I love it." },
@@ -951,7 +951,7 @@ const HomeScreen = () => {
                 <motion.div
                   className={clsx('flex', 'gap-3', 'w-max')}
                   animate={{ x: [0, -1800] }}
-                  transition={{ repeat: Infinity, duration: 34, ease: 'linear' }}
+                  transition={{ repeat: Infinity, duration: 36, ease: 'linear' }}
                 >
                   {[
                     { name: 'John', tag: '@john', gradient: 'from-lime-300 to-emerald-400', text: "I'm at a loss for words. This is amazing. I love it." },

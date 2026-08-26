@@ -22,9 +22,9 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['"Cantarell"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
-        display: ['"Cantarell"', 'sans-serif'],
-        cantarell: ['"Cantarell"', 'sans-serif'],
+        sans: ['"Roboto"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
+        display: ['"Roboto"', 'sans-serif'],
+        roboto: ['"Roboto"', 'sans-serif'],
       },
       boxShadow: {
         'subtle': '0 2px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02)',
