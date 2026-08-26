@@ -3,6 +3,7 @@ import HomeScreen from '../Pages/HomeScreen';
 import Features from '../Pages/Features';
 import About from '../Pages/About';
 import Contact from '../Pages/Contact';
+import Showcase from '../Pages/Showcase';
 
 const AppRoutes = () => {
   return (
@@ -10,6 +11,7 @@ const AppRoutes = () => {
       {/* Public Routes */}
       <Route path="/" element={<HomeScreen />} />
       <Route path="/features" element={<Features />} />
+      <Route path="/showcase" element={<Showcase />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       

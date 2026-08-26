@@ -1,5 +1,4 @@
-import React from 'react';
-import { AppScreenshots } from '../assets/Images';
+import { AppScreenshots, iphoneFrame } from '../assets/Images';
 
 const SCREEN_MAP = {
   // Home & Dashboard
@@ -56,27 +55,46 @@ export const IPhoneMockup = ({
   elevated = false,
   alt = 'Swasthya App Screenshot',
   width = 270,
-  height = 575,
+  height,
 }) => {
   // Resolve screenshot src
   const resolvedSrc = imageSrc || SCREEN_MAP[screenType] || AppScreenshots.homeDashboard;
 
+  // Compute width / height matching 519 / 1024 aspect ratio perfectly
+  const style = {};
+  if (width && !height) {
+    style.width = typeof width === 'number' ? `${width}px` : width;
+    style.aspectRatio = '519 / 1024';
+  } else if (height && !width) {
+    style.height = typeof height === 'number' ? `${height}px` : height;
+    style.aspectRatio = '519 / 1024';
+  } else if (width && height) {
+    // If both are provided, prioritize width and enforce natural 519/1024 aspect ratio to prevent frame distortion
+    style.width = typeof width === 'number' ? `${width}px` : width;
+    style.aspectRatio = '519 / 1024';
+  } else {
+    style.width = '270px';
+    style.aspectRatio = '519 / 1024';
+  }
+
   return (
     <div 
-      className={`relative rounded-[48px] bg-[#151516] p-[8px] shadow-phone transition-all duration-500 hover:scale-[1.02] ${
-        elevated ? 'shadow-phone-elevated -translate-y-4' : ''
+      className={`relative inline-block select-none transition-transform duration-500 hover:scale-[1.02] ${
+        elevated ? 'drop-shadow-2xl -translate-y-4' : 'drop-shadow-lg'
       } ${className}`}
-      style={{
-        width: typeof width === 'number' ? `${width}px` : width,
-        height: typeof height === 'number' ? `${height}px` : height,
-        border: '4px solid #2a2b2e',
-      }}
+      style={style}
     >
-      {/* Outer Titanium Edge Glare */}
-      <div className="absolute inset-0 rounded-[44px] pointer-events-none ring-1 ring-white/20 z-20" />
-      
-      {/* Screen Inner Frame */}
-      <div className="relative w-full h-full bg-[#f6f8fa] rounded-[38px] overflow-hidden flex flex-col select-none shadow-inner">
+      {/* Screen Inner Content - Positioned precisely inside the iPhone bezel */}
+      <div 
+        className="absolute overflow-hidden z-10 flex flex-col"
+        style={{
+          top: '2.1%',
+          bottom: '2.1%',
+          left: '4.6%',
+          right: '4.6%',
+          borderRadius: '11% / 5.5%',
+        }}
+      >
         <img 
           src={resolvedSrc} 
           alt={alt || screenType}
@@ -84,10 +102,17 @@ export const IPhoneMockup = ({
           loading="lazy"
           draggable={false}
         />
-
-        {/* Subtle Screen Ambient Reflection */}
+        {/* Subtle Screen Ambient Glass Reflection */}
         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none" />
       </div>
+
+      {/* Realistic iPhone Device Frame Overlay */}
+      <img
+        src={iphoneFrame}
+        alt="iPhone Frame"
+        className="relative w-full h-full object-fill pointer-events-none z-20"
+        draggable={false}
+      />
     </div>
   );
 };

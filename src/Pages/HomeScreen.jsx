@@ -135,8 +135,8 @@ const HomeScreen = () => {
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           className={clsx('w-full', 'max-w-7xl', 'mx-auto', 'relative', 'pt-6', 'pb-28', 'px-4', 'overflow-visible')}
         >
-          {/* Subtle gradient background glow */}
-          <div className={clsx('absolute', 'top-1/2', 'left-1/2', '-translate-x-1/2', '-translate-y-1/2', 'w-[900px]', 'h-[450px]', 'bg-gradient-to-r', 'from-red-100/40', 'via-amber-50/50', 'to-blue-100/40', 'blur-3xl', '-z-10', 'rounded-full', 'pointer-events-none')} />
+          {/* Ambient Glow Aura */}
+          <div className={clsx('absolute', 'top-1/2', 'left-1/2', '-translate-x-1/2', '-translate-y-1/2', 'w-[900px]', 'h-[450px]', 'bg-gradient-to-r', 'from-purple-100/40', 'via-indigo-50/40', 'to-blue-100/30', 'blur-3xl', '-z-10', 'rounded-full', 'pointer-events-none')} />
 
           {/* Stepped Arch Container (Side-by-side spread, fully unclipped) */}
           <div className={clsx('w-full', 'flex', 'justify-center', 'py-6', 'overflow-visible')}>
@@ -148,8 +148,6 @@ const HomeScreen = () => {
                   screenType="medication-schedule" 
                   alt="Medication Regimen Schedule" 
                   width={210}
-                  height={445}
-                  className={clsx('shadow-lg', 'hover:shadow-xl')}
                 />
               </div>
 
@@ -159,8 +157,6 @@ const HomeScreen = () => {
                   screenType="sleep-routine-details" 
                   alt="Sleep Stages Hypnogram" 
                   width={225}
-                  height={480}
-                  className={clsx('shadow-xl', 'hover:shadow-2xl')}
                 />
               </div>
 
@@ -171,8 +167,6 @@ const HomeScreen = () => {
                   elevated={true} 
                   alt="Home Dashboard" 
                   width={245}
-                  height={520}
-                  className={clsx('shadow-phone-elevated', 'ring-1', 'ring-black/5')}
                 />
               </div>
 
@@ -182,8 +176,6 @@ const HomeScreen = () => {
                   screenType="refill-alerts" 
                   alt="Prescription Refill Alerts" 
                   width={225}
-                  height={480}
-                  className={clsx('shadow-xl', 'hover:shadow-2xl')}
                 />
               </div>
 
@@ -193,8 +185,6 @@ const HomeScreen = () => {
                   screenType="care-circle-medications" 
                   alt="Care Circle Prescriptions" 
                   width={210}
-                  height={445}
-                  className={clsx('shadow-lg', 'hover:shadow-xl')}
                 />
               </div>
 
@@ -510,10 +500,6 @@ const HomeScreen = () => {
         </div>
       </section>
 
-      {/* ========================================================================= */}
-      {/* 14-SCREEN INTERACTIVE APP TOUR GALLERY SECTION */}
-      {/* ========================================================================= */}
-      <AppScreensGallery />
 
       {/* ========================================================================= */}
       {/* 6-GRID FEATURES SECTION */}
@@ -573,8 +559,8 @@ const HomeScreen = () => {
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
                 className={clsx('flex', 'flex-col', 'items-center', 'text-center', 'space-y-3.5', 'group')}
               >
-                {/* Red Squircle Icon */}
-                <div className={clsx('w-12', 'h-12', 'rounded-[14px]', 'bg-gradient-to-b', 'from-[#ff5b52]', 'to-[#e8382f]', 'flex', 'items-center', 'justify-center', 'shadow-md', 'shadow-red-500/20', 'group-hover:scale-105', 'transition-transform', 'duration-300')}>
+                {/* Purple Squircle Icon */}
+                <div className={clsx('w-12', 'h-12', 'rounded-[14px]', 'bg-gradient-to-b', 'from-brand-400', 'to-brand-600', 'flex', 'items-center', 'justify-center', 'shadow-md', 'shadow-brand-500/25', 'group-hover:scale-105', 'transition-transform', 'duration-300')}>
                   {feature.icon}
                 </div>
 
@@ -810,12 +796,12 @@ const HomeScreen = () => {
                   {[
                     { name: 'Alice', tag: '@alice', gradient: 'from-fuchsia-400 to-purple-500', text: "I'm at a loss for words. This is amazing. I love it." },
                     { name: 'David', tag: '@david', gradient: 'from-cyan-400 to-blue-500', text: "I've never seen anything like this before. It's amazing." },
-                    { name: 'Sarah', tag: '@sarah', gradient: 'from-orange-400 to-red-500', text: "I don't know what to say. I'm speechless. This is amazing." },
+                    { name: 'Sarah', tag: '@sarah', gradient: 'from-violet-500 to-purple-600', text: "I don't know what to say. I'm speechless. This is amazing." },
                     { name: 'Emma', tag: '@emma', gradient: 'from-teal-400 to-emerald-500', text: "I'm at a loss for words. This is amazing. I love it." },
                     { name: 'Lucas', tag: '@lucas', gradient: 'from-indigo-400 to-violet-500', text: "I've never seen anything like this before. It's amazing." },
                     { name: 'Alice', tag: '@alice', gradient: 'from-fuchsia-400 to-purple-500', text: "I'm at a loss for words. This is amazing. I love it." },
                     { name: 'David', tag: '@david', gradient: 'from-cyan-400 to-blue-500', text: "I've never seen anything like this before. It's amazing." },
-                    { name: 'Sarah', tag: '@sarah', gradient: 'from-orange-400 to-red-500', text: "I don't know what to say. I'm speechless. This is amazing." },
+                    { name: 'Sarah', tag: '@sarah', gradient: 'from-violet-500 to-purple-600', text: "I don't know what to say. I'm speechless. This is amazing." },
                     { name: 'Emma', tag: '@emma', gradient: 'from-teal-400 to-emerald-500', text: "I'm at a loss for words. This is amazing. I love it." },
                     { name: 'Lucas', tag: '@lucas', gradient: 'from-indigo-400 to-violet-500', text: "I've never seen anything like this before. It's amazing." },
                     { name: 'Alice', tag: '@alice', gradient: 'from-fuchsia-400 to-purple-500', text: "I'm at a loss for words. This is amazing. I love it." },
@@ -840,17 +826,17 @@ const HomeScreen = () => {
                   transition={{ repeat: Infinity, duration: 28, ease: 'linear' }}
                 >
                   {[
-                    { name: 'Jenny', tag: '@jenny', gradient: 'from-red-400 via-amber-400 to-green-400', text: "I'm at a loss for words. This is amazing. I love it." },
+                    { name: 'Jenny', tag: '@jenny', gradient: 'from-purple-400 via-violet-500 to-indigo-600', text: "I'm at a loss for words. This is amazing. I love it." },
                     { name: 'John', tag: '@john', gradient: 'from-lime-300 to-emerald-400', text: "I'm at a loss for words. This is amazing. I love it." },
                     { name: 'James', tag: '@james', gradient: 'from-emerald-400 to-teal-500', text: "I'm at a loss for words. This is amazing. I love it." },
-                    { name: 'Jack', tag: '@jack', gradient: 'from-amber-400 to-pink-500', text: "I've never seen anything like this before. It's amazing." },
+                    { name: 'Jack', tag: '@jack', gradient: 'from-fuchsia-400 to-violet-500', text: "I've never seen anything like this before. It's amazing." },
                     { name: 'Jill', tag: '@jill', gradient: 'from-violet-500 to-indigo-500', text: "I don't know what to say. I'm speechless. This is amazing." },
-                    { name: 'Jenny', tag: '@jenny', gradient: 'from-red-400 via-amber-400 to-green-400', text: "I'm at a loss for words. This is amazing. I love it." },
+                    { name: 'Jenny', tag: '@jenny', gradient: 'from-purple-400 via-violet-500 to-indigo-600', text: "I'm at a loss for words. This is amazing. I love it." },
                     { name: 'John', tag: '@john', gradient: 'from-lime-300 to-emerald-400', text: "I'm at a loss for words. This is amazing. I love it." },
                     { name: 'James', tag: '@james', gradient: 'from-emerald-400 to-teal-500', text: "I'm at a loss for words. This is amazing. I love it." },
-                    { name: 'Jack', tag: '@jack', gradient: 'from-amber-400 to-pink-500', text: "I've never seen anything like this before. It's amazing." },
+                    { name: 'Jack', tag: '@jack', gradient: 'from-fuchsia-400 to-violet-500', text: "I've never seen anything like this before. It's amazing." },
                     { name: 'Jill', tag: '@jill', gradient: 'from-violet-500 to-indigo-500', text: "I don't know what to say. I'm speechless. This is amazing." },
-                    { name: 'Jenny', tag: '@jenny', gradient: 'from-red-400 via-amber-400 to-green-400', text: "I'm at a loss for words. This is amazing. I love it." },
+                    { name: 'Jenny', tag: '@jenny', gradient: 'from-purple-400 via-violet-500 to-indigo-600', text: "I'm at a loss for words. This is amazing. I love it." },
                     { name: 'John', tag: '@john', gradient: 'from-lime-300 to-emerald-400', text: "I'm at a loss for words. This is amazing. I love it." }
                   ].map((c, i) => (
                     <div key={i} className={clsx('w-[300px]', 'shrink-0', 'rounded-[18px]', 'border', 'border-gray-100', 'bg-white', 'px-4', 'py-3', 'shadow-[0_2px_12px_rgba(0,0,0,0.04)]', 'text-left', 'flex', 'items-start', 'gap-3')}>
@@ -1004,12 +990,12 @@ const HomeScreen = () => {
                     { name: 'Lucas', tag: '@lucas', gradient: 'from-indigo-400 to-violet-500', text: "I've never seen anything like this before. It's amazing." },
                     { name: 'Alice', tag: '@alice', gradient: 'from-fuchsia-400 to-purple-500', text: "I'm at a loss for words. This is amazing. I love it." },
                     { name: 'David', tag: '@david', gradient: 'from-cyan-400 to-blue-500', text: "I've never seen anything like this before. It's amazing." },
-                    { name: 'Sarah', tag: '@sarah', gradient: 'from-orange-400 to-red-500', text: "I don't know what to say. I'm speechless. This is amazing." },
+                    { name: 'Sarah', tag: '@sarah', gradient: 'from-violet-500 to-purple-600', text: "I don't know what to say. I'm speechless. This is amazing." },
                     { name: 'Emma', tag: '@emma', gradient: 'from-teal-400 to-emerald-500', text: "I'm at a loss for words. This is amazing. I love it." },
                     { name: 'Lucas', tag: '@lucas', gradient: 'from-indigo-400 to-violet-500', text: "I've never seen anything like this before. It's amazing." },
                     { name: 'Alice', tag: '@alice', gradient: 'from-fuchsia-400 to-purple-500', text: "I'm at a loss for words. This is amazing. I love it." },
                     { name: 'David', tag: '@david', gradient: 'from-cyan-400 to-blue-500', text: "I've never seen anything like this before. It's amazing." },
-                    { name: 'Sarah', tag: '@sarah', gradient: 'from-orange-400 to-red-500', text: "I don't know what to say. I'm speechless. This is amazing." },
+                    { name: 'Sarah', tag: '@sarah', gradient: 'from-violet-500 to-purple-600', text: "I don't know what to say. I'm speechless. This is amazing." },
                     { name: 'Emma', tag: '@emma', gradient: 'from-teal-400 to-emerald-500', text: "I'm at a loss for words. This is amazing. I love it." },
                     { name: 'Lucas', tag: '@lucas', gradient: 'from-indigo-400 to-violet-500', text: "I've never seen anything like this before. It's amazing." }
                   ].map((c, i) => (
@@ -1080,204 +1066,6 @@ const HomeScreen = () => {
   );
 };
 
-// 14-Screens Interactive Gallery Component
-const AppScreensGallery = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
-
-  const categories = [
-    { id: 'all', label: 'All Screens (14)' },
-    { id: 'medication', label: 'Medication & Refills' },
-    { id: 'sleep', label: 'Sleep & Circadian' },
-    { id: 'care-circle', label: 'Care Circle' },
-    { id: 'profile-alerts', label: 'Profile & Alerts' },
-  ];
-
-  const screens = [
-    {
-      screenType: 'home-dashboard',
-      category: 'profile-alerts',
-      title: 'Home Dashboard',
-      subtitle: 'Medication schedule, resting heart rate, and sleep score overview.',
-      tag: 'Core Hub',
-    },
-    {
-      screenType: 'medication-schedule',
-      category: 'medication',
-      title: 'Medication Regimen',
-      subtitle: 'Daily dose timeline with adherence percentage and status tags.',
-      tag: 'Medication',
-    },
-    {
-      screenType: 'medication-history',
-      category: 'medication',
-      title: 'Medication History',
-      subtitle: '30-day adherence calendar, taken/missed statistics, and logs.',
-      tag: 'Adherence',
-    },
-    {
-      screenType: 'refill-alerts',
-      category: 'medication',
-      title: 'Refill Alerts',
-      subtitle: 'Stock depletion forecasts and 1-tap quick refill actions (+15, +30, +60).',
-      tag: 'Smart Refills',
-    },
-    {
-      screenType: 'add-medication',
-      category: 'medication',
-      title: 'Add Medication Form',
-      subtitle: 'Configure dosage forms, tablet strength, quantity, and course duration.',
-      tag: 'Prescriptions',
-    },
-    {
-      screenType: 'add-medication-datepicker',
-      category: 'medication',
-      title: 'Interactive Date Picker',
-      subtitle: 'Intuitive date wheel selection for precise prescription schedules.',
-      tag: 'Schedule',
-    },
-    {
-      screenType: 'sleep-routine-details',
-      category: 'sleep',
-      title: 'Sleep Routine & Hypnogram',
-      subtitle: '88% optimal rest score with Deep, REM, Core stage hypnogram.',
-      tag: 'Hypnogram',
-    },
-    {
-      screenType: 'sleep-schedule-calculator',
-      category: 'sleep',
-      title: '90-Min Cycle Calculator',
-      subtitle: 'Target restorative cycles with interactive bedtime & wake dials.',
-      tag: 'Circadian',
-    },
-    {
-      screenType: 'care-circle-medications',
-      category: 'care-circle',
-      title: 'Care Circle Prescriptions',
-      subtitle: 'Prescribe and monitor medications for family members and dependents.',
-      tag: 'Family Care',
-    },
-    {
-      screenType: 'care-circle-connections',
-      category: 'care-circle',
-      title: 'Support Circle Network',
-      subtitle: 'Connected family members, emergency contacts, and physician portal.',
-      tag: 'Connections',
-    },
-    {
-      screenType: 'care-circle-invitations',
-      category: 'care-circle',
-      title: 'Circle Invitations & Privacy',
-      subtitle: 'Manage sent and received caregiving invitations with access control.',
-      tag: 'Privacy',
-    },
-    {
-      screenType: 'notifications-alerts',
-      category: 'profile-alerts',
-      title: 'Notification Center',
-      subtitle: 'Consolidated alerts for prescription refills, hydration, and bedtime.',
-      tag: 'Alerts Hub',
-    },
-    {
-      screenType: 'user-profile-biometrics',
-      category: 'profile-alerts',
-      title: 'Profile & Health Biometrics',
-      subtitle: 'Weight, height, dietary focus, user ID, and contact telemetry.',
-      tag: 'Biometrics',
-    },
-    {
-      screenType: 'notification-permission',
-      category: 'profile-alerts',
-      title: 'Push Dose Alarms',
-      subtitle: 'High-priority notification prompt ensuring critical doses are never missed.',
-      tag: 'System',
-    },
-  ];
-
-  const filteredScreens = activeCategory === 'all' 
-    ? screens 
-    : screens.filter(s => s.category === activeCategory);
-
-  return (
-    <section id="gallery" className={clsx('py-24', 'bg-white', 'border-t', 'border-gray-100')}>
-      <div className={clsx('max-w-7xl', 'mx-auto', 'px-4', 'sm:px-6', 'lg:px-8')}>
-        
-        {/* Header */}
-        <div className={clsx('text-center', 'max-w-3xl', 'mx-auto', 'mb-12', 'space-y-3')}>
-          <span className={clsx('text-brand-500', 'font-bold', 'text-xs', 'sm:text-sm', 'tracking-[0.2em]', 'uppercase')}>
-            APP SHOWCASE
-          </span>
-          <h2 className={clsx('text-3xl', 'sm:text-4xl', 'md:text-5xl', 'font-extrabold', 'text-gray-900', 'tracking-tight')}>
-            explore all 14 app screens
-          </h2>
-          <p className={clsx('text-gray-500', 'text-base', 'sm:text-lg', 'max-w-xl', 'mx-auto', 'font-normal')}>
-            Take an interactive tour of every screen inside Swasthya on iOS — crafted with precision for you and your family.
-          </p>
-        </div>
-
-        {/* Filter Tabs */}
-        <div className={clsx('flex', 'items-center', 'justify-center', 'flex-wrap', 'gap-2', 'mb-14')}>
-          {categories.map(cat => (
-            <button
-              key={cat.id}
-              onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2.5 rounded-full text-xs font-semibold transition-all ${
-                activeCategory === cat.id
-                  ? 'bg-brand-500 text-white shadow-md shadow-brand-500/20'
-                  : 'bg-gray-100 hover:bg-gray-200/80 text-gray-600'
-              }`}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Responsive Screens Grid */}
-        <motion.div 
-          layout
-          className={clsx('grid', 'grid-cols-1', 'sm:grid-cols-2', 'lg:grid-cols-3', 'xl:grid-cols-4', 'gap-8', 'justify-items-center')}
-        >
-          <AnimatePresence>
-            {filteredScreens.map((screen) => (
-              <motion.div
-                key={screen.screenType}
-                layout
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3 }}
-                className={clsx('flex', 'flex-col', 'items-center', 'group', 'max-w-[270px]')}
-              >
-                <div className={clsx('transform', 'group-hover:-translate-y-2', 'transition-transform', 'duration-300')}>
-                  <IPhoneMockup 
-                    screenType={screen.screenType} 
-                    alt={screen.title} 
-                    width={250}
-                    height={535}
-                  />
-                </div>
-
-                <div className={clsx('text-center', 'mt-5', 'space-y-1', 'w-full')}>
-                  <div className={clsx('flex', 'items-center', 'justify-center', 'gap-1.5', 'mb-1')}>
-                    <span className={clsx('bg-brand-50', 'text-brand-600', 'text-[10px]', 'font-bold', 'px-2', 'py-0.5', 'rounded-full')}>
-                      {screen.tag}
-                    </span>
-                  </div>
-                  <h4 className={clsx('font-bold', 'text-sm', 'text-gray-900', 'leading-tight')}>
-                    {screen.title}
-                  </h4>
-                  <p className={clsx('text-[11px]', 'text-gray-500', 'leading-snug')}>
-                    {screen.subtitle}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
-
-      </div>
-    </section>
-  );
-};
 
 const FaqItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
