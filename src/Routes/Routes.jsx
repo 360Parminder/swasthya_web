@@ -4,6 +4,7 @@ import Features from '../Pages/Features';
 import About from '../Pages/About';
 import Contact from '../Pages/Contact';
 import Showcase from '../Pages/Showcase';
+import PrivacyPolicy from '../Pages/LegalPrivacy';
 
 const AppRoutes = () => {
   return (
@@ -14,6 +15,8 @@ const AppRoutes = () => {
       <Route path="/showcase" element={<Showcase />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/privacy" element={<PrivacyPolicy />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       
       {/* Protected Routes can be added here */}
       
