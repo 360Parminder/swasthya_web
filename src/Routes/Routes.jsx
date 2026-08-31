@@ -5,6 +5,7 @@ import About from '../Pages/About';
 import Contact from '../Pages/Contact';
 import Showcase from '../Pages/Showcase';
 import PrivacyPolicy from '../Pages/LegalPrivacy';
+import StoreMockups from '../Pages/StoreMockups';
 
 const AppRoutes = () => {
   return (
@@ -13,6 +14,8 @@ const AppRoutes = () => {
       <Route path="/" element={<HomeScreen />} />
       <Route path="/features" element={<Features />} />
       <Route path="/showcase" element={<Showcase />} />
+      <Route path="/mockups" element={<StoreMockups />} />
+      <Route path="/store-mockups" element={<StoreMockups />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/privacy" element={<PrivacyPolicy />} />
