@@ -136,7 +136,7 @@ const HomeScreen = () => {
           className={clsx('w-full', 'max-w-7xl', 'mx-auto', 'relative', 'pt-6', 'pb-28', 'px-4', 'overflow-visible')}
         >
           {/* Ambient Glow Aura */}
-          <div className={clsx('absolute', 'top-1/2', 'left-1/2', '-translate-x-1/2', '-translate-y-1/2', 'w-[900px]', 'h-[450px]', 'bg-gradient-to-r', 'from-purple-100/40', 'via-indigo-50/40', 'to-blue-100/30', 'blur-3xl', '-z-10', 'rounded-full', 'pointer-events-none')} />
+          <div className={clsx('absolute', 'top-1/2', 'left-1/2', '-translate-x-1/2', '-translate-y-1/2', 'w-[900px]', 'h-[450px]', 'bg-gradient-to-r', 'from-blue-100/40', 'via-sky-50/40', 'to-blue-100/30', 'blur-3xl', '-z-10', 'rounded-full', 'pointer-events-none')} />
 
           {/* Stepped Arch Container (Side-by-side spread, fully unclipped) */}
           <div className={clsx('w-full', 'flex', 'justify-center', 'py-6', 'overflow-visible')}>
@@ -559,7 +559,7 @@ const HomeScreen = () => {
                 transition={{ duration: 0.4, delay: idx * 0.08 }}
                 className={clsx('flex', 'flex-col', 'items-center', 'text-center', 'space-y-3.5', 'group')}
               >
-                {/* Purple Squircle Icon */}
+                {/* Blue Squircle Icon */}
                 <div className={clsx('w-12', 'h-12', 'rounded-[14px]', 'bg-gradient-to-b', 'from-brand-400', 'to-brand-600', 'flex', 'items-center', 'justify-center', 'shadow-md', 'shadow-brand-500/25', 'group-hover:scale-105', 'transition-transform', 'duration-300')}>
                   {feature.icon}
                 </div>

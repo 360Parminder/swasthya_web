@@ -60,6 +60,14 @@ const Header = () => {
           >
             Showcase
           </Link>
+          {/* <Link 
+            to="/mockups" 
+            className={`text-sm font-medium transition-colors hover:text-brand-500 ${
+              location.pathname === '/mockups' ? 'text-gray-900 font-semibold' : 'text-gray-600'
+            }`}
+          >
+            Mockups
+          </Link> */}
           <Link 
             to="/about" 
             className={`text-sm font-medium transition-colors hover:text-brand-500 ${

@@ -92,9 +92,15 @@ const Footer = () => {
         {/* Bottom Row: Links Left, Copyright Right */}
         <div className={clsx('flex', 'justify-between', 'items-center', 'text-xs', 'text-gray-500', 'font-medium')}>
           <div className={clsx('flex', 'items-center', 'space-x-6', 'flex-wrap', 'gap-y-2')}>
+            <Link to="/features" className={clsx('hover:text-gray-900', 'transition-colors')}>
+              Features
+            </Link>
             <Link to="/showcase" className={clsx('hover:text-gray-900', 'transition-colors')}>
               Showcase
             </Link>
+            {/* <Link to="/mockups" className={clsx('hover:text-gray-900', 'transition-colors')}>
+              Store Mockups
+            </Link> */}
             <Link to="/about" className={clsx('hover:text-gray-900', 'transition-colors')}>
               About
             </Link>
