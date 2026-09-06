@@ -18,10 +18,10 @@ const MOCKUP_SLIDES = [
     badgeBg: "bg-white/10 text-white border-white/20",
     headline: "Your complete\nhealth ecosystem",
     subtext: "Connect daily medications, sleep architecture, and family care in one clinical platform.",
-    bg: "from-[#0d0b18] via-[#16122a] to-[#0d0b18]",
+    bg: "from-[#080d1a] via-[#0f172a] to-[#080d1a]",
     screenType: "home-dashboard",
     phoneTransform: "translate-y-4 hover:translate-y-2",
-    accentArrow: "purple",
+    accentArrow: "blue",
     footerBadges: ["AI Dose Schedule", "Restorative Sleep", "Care Circle"],
   },
   {
@@ -30,7 +30,7 @@ const MOCKUP_SLIDES = [
     badgeBg: "bg-black/40 text-white border-white/10",
     headline: "Log anytime,\nnever miss a dose",
     subtext: "1-tap intake tracking with instant auditory feedback and multi-time alarms.",
-    bg: "from-[#7c3aed] via-[#6d28d9] to-[#5b21b6]",
+    bg: "from-[#2563eb] via-[#1d4ed8] to-[#1e40af]",
     screenType: "medication-schedule",
     phoneTransform: "translate-y-6 hover:translate-y-2",
     accentArrow: "white",
@@ -39,13 +39,13 @@ const MOCKUP_SLIDES = [
   {
     id: 3,
     badge: "Clinical Adherence",
-    badgeBg: "bg-purple-900/60 text-purple-200 border-purple-500/30",
+    badgeBg: "bg-blue-900/60 text-blue-200 border-blue-500/30",
     headline: "Health tracking\nyou can trust",
     subtext: "30-day adherence calendar, taken/missed statistics, and audit logs.",
-    bg: "from-[#0f0e17] via-[#1a172e] to-[#0f0e17]",
+    bg: "from-[#090f1d] via-[#111c35] to-[#090f1d]",
     screenType: "medication-history",
     phoneTransform: "translate-y-3 hover:translate-y-1",
-    accentArrow: "violet",
+    accentArrow: "blue",
     footerBadges: ["30-Day History", "Adherence Score", "Export Reports"],
   },
   {
@@ -54,7 +54,7 @@ const MOCKUP_SLIDES = [
     badgeBg: "bg-black/40 text-white border-white/10",
     headline: "Refill before\nyour pills run out",
     subtext: "Automated depletion forecasts with 1-tap quick refill restocking (+15, +30, +60).",
-    bg: "from-[#6d28d9] via-[#5b21b6] to-[#4c1d95]",
+    bg: "from-[#1d4ed8] via-[#1e40af] to-[#1e3a8a]",
     screenType: "refill-alerts",
     phoneTransform: "translate-y-6 hover:translate-y-2",
     accentArrow: "white",
@@ -66,7 +66,7 @@ const MOCKUP_SLIDES = [
     badgeBg: "bg-white/15 text-white border-white/20",
     headline: "Protect the ones\nyou love most",
     subtext: "Manage prescriptions and monitor vitals for aging parents and dependents remotely.",
-    bg: "from-[#7c3aed] via-[#8b5cf6] to-[#6d28d9]",
+    bg: "from-[#2563eb] via-[#3b82f6] to-[#1d4ed8]",
     screenType: "care-circle-medications",
     phoneTransform: "translate-y-4 hover:translate-y-2",
     accentArrow: "white",
@@ -83,7 +83,7 @@ const HandDrawnArrow = ({ color = "white", className = "" }) => (
   >
     <path
       d="M10 20 C 35 10, 65 25, 80 50 M 80 50 L 65 48 M 80 50 L 76 35"
-      stroke={color === "white" ? "rgba(255,255,255,0.7)" : "#a78bfa"}
+      stroke={color === "white" ? "rgba(255,255,255,0.7)" : "#60a5fa"}
       strokeWidth="3.5"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -95,7 +95,7 @@ const StoreMockups = () => {
   const [selectedSlide, setSelectedSlide] = useState(null);
 
   return (
-    <div className={clsx('min-h-screen', 'bg-[#0f0e17]', 'text-white', 'pt-28', 'pb-24', 'font-sans')}>
+    <div className={clsx('min-h-screen', 'bg-[#080d1a]', 'text-white', 'pt-28', 'pb-24', 'font-sans')}>
 
       {/* ── Header ── */}
       <div className={clsx('max-w-7xl', 'mx-auto', 'px-4', 'sm:px-6', 'text-center', 'mb-16', 'space-y-4')}>
@@ -105,7 +105,7 @@ const StoreMockups = () => {
           transition={{ duration: 0.5 }}
           className="space-y-3"
         >
-          <span className={clsx('text-purple-400', 'font-bold', 'text-xs', 'tracking-[0.25em]', 'uppercase')}>
+          <span className={clsx('text-blue-400', 'font-bold', 'text-xs', 'tracking-[0.25em]', 'uppercase')}>
             APP STORE & PLAY STORE ASSETS
           </span>
           <h1 className={clsx('text-3xl', 'sm:text-5xl', 'md:text-6xl', 'font-extrabold', 'tracking-tight')}>
@@ -143,7 +143,7 @@ const StoreMockups = () => {
               >
                 {/* Decorative Ambient Radial Glow */}
                 <div className={clsx('absolute', '-top-20', '-left-20', 'w-48', 'h-48', 'bg-white/10', 'rounded-full', 'blur-3xl', 'pointer-events-none')} />
-                <div className={clsx('absolute', '-bottom-20', '-right-20', 'w-48', 'h-48', 'bg-purple-500/20', 'rounded-full', 'blur-3xl', 'pointer-events-none')} />
+                <div className={clsx('absolute', '-bottom-20', '-right-20', 'w-48', 'h-48', 'bg-blue-500/20', 'rounded-full', 'blur-3xl', 'pointer-events-none')} />
 
                 {/* Top Badge */}
                 <div className={clsx('mb-4', 'z-10')}>
@@ -202,7 +202,7 @@ const StoreMockups = () => {
       <div className={clsx('max-w-4xl', 'mx-auto', 'px-4', 'mt-20')}>
         <div className={clsx('bg-white/5', 'rounded-3xl', 'p-8', 'border', 'border-white/10', 'space-y-4', 'text-left')}>
           <div className={clsx('flex', 'items-center', 'gap-3')}>
-            <div className={clsx('w-10', 'h-10', 'rounded-xl', 'bg-purple-600/30', 'text-purple-400', 'flex', 'items-center', 'justify-center', 'border', 'border-purple-500/30')}>
+            <div className={clsx('w-10', 'h-10', 'rounded-xl', 'bg-blue-600/30', 'text-blue-400', 'flex', 'items-center', 'justify-center', 'border', 'border-blue-500/30')}>
               <SparklesIcon size={20} />
             </div>
             <div>
@@ -213,15 +213,15 @@ const StoreMockups = () => {
 
           <ul className={clsx('space-y-2', 'text-xs', 'text-gray-300', 'pt-2', 'divide-y', 'divide-white/5')}>
             <li className={clsx('flex', 'items-center', 'gap-2', 'pt-2')}>
-              <CheckmarkCircle02Icon size={16} className={clsx('text-purple-400', 'shrink-0')} />
+              <CheckmarkCircle02Icon size={16} className={clsx('text-blue-400', 'shrink-0')} />
               <span><strong>Resolution:</strong> 1290 × 2796 px (Portrait 9:19.5 ratio) is standard for flagship iPhone and Android displays.</span>
             </li>
             <li className={clsx('flex', 'items-center', 'gap-2', 'pt-2')}>
-              <CheckmarkCircle02Icon size={16} className={clsx('text-purple-400', 'shrink-0')} />
-              <span><strong>Color Cohesion:</strong> Built using royal purple (`#7C3AED`) and midnight violet matching your Swasthya logo.</span>
+              <CheckmarkCircle02Icon size={16} className={clsx('text-blue-400', 'shrink-0')} />
+              <span><strong>Color Cohesion:</strong> Built using clinical blue (`#2563EB`) and deep navy matching your Swasthya app.</span>
             </li>
             <li className={clsx('flex', 'items-center', 'gap-2', 'pt-2')}>
-              <CheckmarkCircle02Icon size={16} className={clsx('text-purple-400', 'shrink-0')} />
+              <CheckmarkCircle02Icon size={16} className={clsx('text-blue-400', 'shrink-0')} />
               <span><strong>Authentic iPhone Hardware:</strong> Integrates the transparent titanium bezel and dynamic island frame provided for pixel-accurate preview.</span>
             </li>
           </ul>
