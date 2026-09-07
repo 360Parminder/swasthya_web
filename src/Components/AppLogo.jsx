@@ -57,7 +57,7 @@ export const AppLogo = ({
 
       {showText && (
         <span className={`tracking-tight text-gray-900 ${getTextSize()}`}>
-          Swasthya
+          {/* Swasthya */}
         </span>
       )}
     </div>
