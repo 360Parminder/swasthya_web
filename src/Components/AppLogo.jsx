@@ -91,15 +91,18 @@ export const AppStoreBadge = ({ className = '', compact = false }) => {
         </div>
       </motion.div>
 
-      {/* Google Play Store Coming Soon Badge */}
-      <motion.div
+      {/* Google Play Store Badge */}
+      <motion.a
+        href="http://play.google.com/store/apps/details?id=com.Swasthya.app"
+        target="_blank"
+        rel="noopener noreferrer"
         whileHover={{ scale: 1.04, y: -1.5 }}
         whileTap={{ scale: 0.96 }}
         className={`inline-flex items-center ${
           compact 
             ? 'space-x-2 bg-black text-white px-3 py-1.5 rounded-xl border border-white/10 shadow-sm hover:shadow-md' 
             : 'space-x-3 bg-black text-white px-4 sm:px-5 py-2.5 rounded-2xl border border-white/10 shadow-md hover:shadow-xl'
-        } transition-all cursor-pointer select-none`}
+        } transition-all cursor-pointer select-none no-underline`}
       >
         <svg className={`${compact ? 'w-3.5 h-3.5' : 'w-5 h-5'} shrink-0`} fillRule="evenodd" clipRule="evenodd" imageRendering="optimizeQuality" shapeRendering="geometricPrecision" textRendering="geometricPrecision" viewBox="0 0 466 511.98">
           <g fillRule="nonzero">
@@ -110,10 +113,10 @@ export const AppStoreBadge = ({ className = '', compact = false }) => {
           </g>
         </svg>
         <div className="text-left flex flex-col leading-none">
-          <span className={`${compact ? 'text-[8.5px]' : 'text-[10px]'} text-gray-300 font-normal tracking-wide`}>Coming Soon on</span>
+          <span className={`${compact ? 'text-[8.5px]' : 'text-[10px]'} text-gray-300 font-normal tracking-wide uppercase`}>GET IT ON</span>
           <span className={`${compact ? 'text-[11px] mt-0.5' : 'text-xs sm:text-sm mt-1'} font-semibold tracking-tight`}>Google Play</span>
         </div>
-      </motion.div>
+      </motion.a>
     </div>
   );
 };
